@@ -90,7 +90,7 @@
             this.btn_viewproduct.Name = "btn_viewproduct";
             this.btn_viewproduct.Size = new System.Drawing.Size(75, 23);
             this.btn_viewproduct.TabIndex = 1;
-            this.btn_viewproduct.Text = "Click";
+            this.btn_viewproduct.Text = "Add";
             this.btn_viewproduct.UseVisualStyleBackColor = true;
             this.btn_viewproduct.Click += new System.EventHandler(this.button1_Click);
             // 

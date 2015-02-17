@@ -10,3 +10,16 @@ c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProduc
 c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.pdb
 c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
 C:\Users\RESILENCE\Documents\Visual Studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe.config
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.exe
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.pdb
+E:\TestBilling\testbilling\bin\Debug\DB_Products.mdf
+E:\TestBilling\testbilling\bin\Debug\DB_Products_log.ldf
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.pdb
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Form1.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmSubproductDetails.resources
