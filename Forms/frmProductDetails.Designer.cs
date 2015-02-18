@@ -86,7 +86,7 @@
             // 
             // btn_viewproduct
             // 
-            this.btn_viewproduct.Location = new System.Drawing.Point(367, 501);
+            this.btn_viewproduct.Location = new System.Drawing.Point(364, 504);
             this.btn_viewproduct.Name = "btn_viewproduct";
             this.btn_viewproduct.Size = new System.Drawing.Size(75, 23);
             this.btn_viewproduct.TabIndex = 1;
