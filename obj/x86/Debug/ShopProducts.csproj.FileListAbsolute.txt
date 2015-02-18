@@ -23,3 +23,10 @@ E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.re
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmSubproductDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomer.resources
+E:\TestBilling\testbilling\bin\Debug\Database1.mdf
+E:\TestBilling\testbilling\bin\Debug\Database1_log.LDF
+E:\TestBilling\testbilling\bin\Debug\MyBill.mdf
+E:\TestBilling\testbilling\bin\Debug\MyBill_log.ldf
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources

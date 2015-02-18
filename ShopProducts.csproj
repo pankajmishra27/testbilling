@@ -81,6 +81,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCustomerDetails.Designer.cs">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInvoicemain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInvoicemain.Designer.cs">
+      <DependentUpon>frmInvoicemain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCustomerDetails.resx">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInvoicemain.resx">
+      <DependentUpon>frmInvoicemain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
@@ -185,12 +212,26 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.LDF">
+      <DependentUpon>Database1.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DB_Products.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DB_Products_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB_Products.mdf</DependentUpon>
+    </Content>
+    <Content Include="MyBill.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MyBill_log.ldf">
+      <DependentUpon>MyBill.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\background1.jpg" />
     <None Include="Resources\background.jpg" />
