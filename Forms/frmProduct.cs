@@ -27,7 +27,6 @@ namespace ShopProducts.Forms
             List<string> unit = new List<string>();
             unit.Add("Piece");
             unit.Add("Box");
-
             combo_unittype.DataSource = unit;
 
             List<string> id = new List<string>();
