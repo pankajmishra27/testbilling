@@ -159,14 +159,14 @@
             // 
             this.txt_bank.Location = new System.Drawing.Point(109, 53);
             this.txt_bank.Name = "txt_bank";
-            this.txt_bank.Size = new System.Drawing.Size(142, 23);
+            this.txt_bank.Size = new System.Drawing.Size(174, 23);
             this.txt_bank.TabIndex = 5;
             // 
             // txt_chequenumber
             // 
             this.txt_chequenumber.Location = new System.Drawing.Point(109, 21);
             this.txt_chequenumber.Name = "txt_chequenumber";
-            this.txt_chequenumber.Size = new System.Drawing.Size(142, 23);
+            this.txt_chequenumber.Size = new System.Drawing.Size(174, 23);
             this.txt_chequenumber.TabIndex = 4;
             // 
             // txt_chequedate

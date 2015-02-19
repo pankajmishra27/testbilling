@@ -22,6 +22,10 @@ namespace ShopProducts.Forms
         private void frmInvoicemain_Load(object sender, EventArgs e)
         {
 
+
+            //lbl_customerid.Visible = false;
+            //lbl_customername.Visible = false;
+
             List<string> PrID = new List<string>();
             PrID.Add("01");
             PrID.Add("02");
@@ -82,20 +86,100 @@ namespace ShopProducts.Forms
 
                 try
                 {
-                    txt_customerid.Text = txt_customerid.Text.Trim();
-                    txt_invoicenumber.Text = txt_invoicenumber.Text.Trim();
-                    txt_customername.Text = txt_customername.Text.Trim();
-                    txt_customeraddress.Text = txt_customeraddress.Text.Trim();
-                    txt_chequenumber.Text = txt_chequenumber.Text.Trim();
-                    txt_bank.Text = txt_bank.Text.Trim();
-                    txt_taxamount.Text = txt_taxamount.Text.Trim();
-                    txt_amount.Text = txt_amount.Text.Trim();
+                    if (string.IsNullOrEmpty(txt_customerid.Text.Trim()))
+                    {
+                        txt_customerid.Text = "Please enter customer id";
+                        return;
+                    }
                 }
                 catch (Exception ex)
                 {
 
                 }
-                
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
+                    {
+                        txt_invoicenumber.Text = "Please enter invoice number";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_customername.Text.Trim()))
+                    {
+                        txt_customername.Text = "Please enter customer name";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
+                    {
+                        txt_customeraddress.Text = "Please enter customer address";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_chequenumber.Text.Trim()))
+                    {
+                        txt_chequenumber.Text = "Cheque No.";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_bank.Text.Trim()))
+                    {
+                        txt_bank.Text = "Bank name";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
+                    {
+                        txt_taxamount.Text = "Tax Amount";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                    {
+                        txt_amount.Text = "Amount";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                }
                 string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + txt_customername.Text.Trim() + "','" + txt_customeraddress.Text.Trim() + "','" + txt_customerid.Text.Trim() + "','" +  txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";//,'" + DateTime.Now + "')";
                 db.RunQuery(Query);     
             }
@@ -104,5 +188,6 @@ namespace ShopProducts.Forms
 
             }
         }
+        
     }
 }
