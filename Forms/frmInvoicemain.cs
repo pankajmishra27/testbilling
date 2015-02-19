@@ -45,15 +45,19 @@ namespace ShopProducts.Forms
                     try
                     {
                         node = new ListViewItem();
-                        node.Text = dt.Rows[i]["RowId"].ToString();
+                        node.Text = dt.Rows[i]["InvId"].ToString();
 
                         //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvId"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["PrId"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["PrDescription"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["PrQty"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["PrRate"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["PrTaxPercent"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceNo"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceDate"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceCustomer"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceAddress"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceCustomerId"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceChequeNo"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceBank"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceChequeDate"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceNetAmount"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["InvoiceTaxNetAmount"].ToString());
                         //node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
                         lst_Invoicemain.Items.Add(node);
@@ -78,56 +82,22 @@ namespace ShopProducts.Forms
 
                 try
                 {
+                    txt_customerid.Text = txt_customerid.Text.Trim();
                     txt_invoicenumber.Text = txt_invoicenumber.Text.Trim();
+                    txt_customername.Text = txt_customername.Text.Trim();
+                    txt_customeraddress.Text = txt_customeraddress.Text.Trim();
+                    txt_chequenumber.Text = txt_chequenumber.Text.Trim();
+                    txt_bank.Text = txt_bank.Text.Trim();
+                    txt_taxamount.Text = txt_taxamount.Text.Trim();
+                    txt_amount.Text = txt_amount.Text.Trim();
                 }
                 catch (Exception ex)
                 {
 
                 }
-                try
-                {
-                    combo_productid.Text = combo_productid.Text.Trim(); //txt_invoicenumber.Text = txt_invoicenumber.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    combo_description.Text = combo_description.Text.Trim(); //txt_invoicenumber.Text = txt_invoicenumber.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    txt_quantity.Text = txt_quantity.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    txt_rate.Text = txt_rate.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    txt_tax.Text = txt_tax.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                string Query = "INSERT INTO tbl_InvoiceSub values(" + txt_invoicenumber.Text.Trim() + ",'" + combo_productid.SelectedItem + "','" + combo_description.Text.Trim() + "','" + txt_quantity.Text.Trim() + "','" + txt_rate.Text.Trim() + "','" + txt_tax.Text.Trim() + "')";//,'" + DateTime.Now + "')";
-                db.RunQuery(Query);
                 
+                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + txt_customername.Text.Trim() + "','" + txt_customeraddress.Text.Trim() + "','" + txt_customerid.Text.Trim() + "','" +  txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";//,'" + DateTime.Now + "')";
+                db.RunQuery(Query);     
             }
             catch (Exception ex)
             {

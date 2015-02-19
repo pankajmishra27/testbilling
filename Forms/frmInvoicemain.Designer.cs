@@ -38,7 +38,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_bank = new System.Windows.Forms.TextBox();
             this.txt_chequenumber = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txt_chequedate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_customeraddress = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txt_invoicedate = new System.Windows.Forms.DateTimePicker();
             this.txt_invoicenumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -143,7 +143,7 @@
             // 
             this.groupBox1.Controls.Add(this.txt_bank);
             this.groupBox1.Controls.Add(this.txt_chequenumber);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.txt_chequedate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -169,13 +169,13 @@
             this.txt_chequenumber.Size = new System.Drawing.Size(142, 23);
             this.txt_chequenumber.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // txt_chequedate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(341, 13);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(136, 23);
-            this.dateTimePicker2.TabIndex = 3;
+            this.txt_chequedate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_chequedate.Location = new System.Drawing.Point(341, 13);
+            this.txt_chequedate.Name = "txt_chequedate";
+            this.txt_chequedate.Size = new System.Drawing.Size(136, 23);
+            this.txt_chequedate.TabIndex = 3;
             // 
             // label8
             // 
@@ -224,7 +224,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txt_customeraddress);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.txt_invoicedate);
             this.groupBox2.Controls.Add(this.txt_invoicenumber);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label1);
@@ -449,14 +449,14 @@
             this.txt_customeraddress.Size = new System.Drawing.Size(406, 83);
             this.txt_customeraddress.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // txt_invoicedate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(905, 58);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 23);
-            this.dateTimePicker1.TabIndex = 11;
+            this.txt_invoicedate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_invoicedate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_invoicedate.Location = new System.Drawing.Point(905, 58);
+            this.txt_invoicedate.Name = "txt_invoicedate";
+            this.txt_invoicedate.Size = new System.Drawing.Size(136, 23);
+            this.txt_invoicedate.TabIndex = 11;
             // 
             // txt_invoicenumber
             // 
@@ -494,12 +494,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_bank;
         private System.Windows.Forms.TextBox txt_chequenumber;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker txt_chequedate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txt_invoicedate;
         private System.Windows.Forms.TextBox txt_invoicenumber;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
