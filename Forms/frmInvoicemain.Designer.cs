@@ -43,9 +43,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.combo_description = new System.Windows.Forms.ComboBox();
+            this.combo_productid = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lst_Invoicemain = new System.Windows.Forms.ListView();
             this.prid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,8 +71,6 @@
             this.txt_customeraddress = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_invoicenumber = new System.Windows.Forms.TextBox();
-            this.combo_productcode = new System.Windows.Forms.ComboBox();
-            this.combo_description = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -207,10 +207,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.combo_description);
-            this.groupBox2.Controls.Add(this.combo_productcode);
+            this.groupBox2.Controls.Add(this.combo_productid);
             this.groupBox2.Controls.Add(this.btn_delete);
             this.groupBox2.Controls.Add(this.btn_add);
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lst_Invoicemain);
             this.groupBox2.Controls.Add(this.txt_amount);
             this.groupBox2.Controls.Add(this.txt_taxamount);
             this.groupBox2.Controls.Add(this.txt_tax);
@@ -242,6 +242,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Invoice";
             // 
+            // combo_description
+            // 
+            this.combo_description.FormattingEnabled = true;
+            this.combo_description.Location = new System.Drawing.Point(174, 224);
+            this.combo_description.Name = "combo_description";
+            this.combo_description.Size = new System.Drawing.Size(121, 21);
+            this.combo_description.TabIndex = 29;
+            // 
+            // combo_productid
+            // 
+            this.combo_productid.FormattingEnabled = true;
+            this.combo_productid.Location = new System.Drawing.Point(24, 224);
+            this.combo_productid.Name = "combo_productid";
+            this.combo_productid.Size = new System.Drawing.Size(121, 21);
+            this.combo_productid.TabIndex = 28;
+            // 
             // btn_delete
             // 
             this.btn_delete.Location = new System.Drawing.Point(966, 263);
@@ -259,10 +275,11 @@
             this.btn_add.TabIndex = 26;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // listView1
+            // lst_Invoicemain
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lst_Invoicemain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.prid,
             this.code,
             this.description,
@@ -271,14 +288,14 @@
             this.tax,
             this.taxamount,
             this.amount});
-            this.listView1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(24, 303);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1023, 202);
-            this.listView1.TabIndex = 25;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lst_Invoicemain.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_Invoicemain.GridLines = true;
+            this.lst_Invoicemain.Location = new System.Drawing.Point(24, 303);
+            this.lst_Invoicemain.Name = "lst_Invoicemain";
+            this.lst_Invoicemain.Size = new System.Drawing.Size(1023, 202);
+            this.lst_Invoicemain.TabIndex = 25;
+            this.lst_Invoicemain.UseCompatibleStateImageBehavior = false;
+            this.lst_Invoicemain.View = System.Windows.Forms.View.Details;
             // 
             // prid
             // 
@@ -434,10 +451,11 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(905, 58);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(136, 23);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // txt_invoicenumber
@@ -446,22 +464,6 @@
             this.txt_invoicenumber.Name = "txt_invoicenumber";
             this.txt_invoicenumber.Size = new System.Drawing.Size(136, 21);
             this.txt_invoicenumber.TabIndex = 10;
-            // 
-            // combo_productcode
-            // 
-            this.combo_productcode.FormattingEnabled = true;
-            this.combo_productcode.Location = new System.Drawing.Point(24, 224);
-            this.combo_productcode.Name = "combo_productcode";
-            this.combo_productcode.Size = new System.Drawing.Size(121, 21);
-            this.combo_productcode.TabIndex = 28;
-            // 
-            // combo_description
-            // 
-            this.combo_description.FormattingEnabled = true;
-            this.combo_description.Location = new System.Drawing.Point(174, 224);
-            this.combo_description.Name = "combo_description";
-            this.combo_description.Size = new System.Drawing.Size(121, 21);
-            this.combo_description.TabIndex = 29;
             // 
             // frmInvoicemain
             // 
@@ -507,7 +509,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_customeraddress;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lst_Invoicemain;
         private System.Windows.Forms.TextBox txt_amount;
         private System.Windows.Forms.TextBox txt_taxamount;
         private System.Windows.Forms.TextBox txt_tax;
@@ -524,6 +526,6 @@
         private System.Windows.Forms.ColumnHeader taxamount;
         private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.ComboBox combo_description;
-        private System.Windows.Forms.ComboBox combo_productcode;
+        private System.Windows.Forms.ComboBox combo_productid;
     }
 }
