@@ -31,3 +31,4 @@ E:\TestBilling\testbilling\bin\Debug\MyBill_log.ldf
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Controls.ucFooter.resources

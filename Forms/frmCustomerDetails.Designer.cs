@@ -35,6 +35,8 @@
             this.customer_contact = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_addcustomer = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lst_customerdetails
@@ -45,10 +47,13 @@
             this.customer_address,
             this.customer_contact,
             this.Date});
+            this.lst_customerdetails.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst_customerdetails.GridLines = true;
-            this.lst_customerdetails.Location = new System.Drawing.Point(-1, 0);
+            this.lst_customerdetails.Location = new System.Drawing.Point(7, 26);
+            this.lst_customerdetails.Margin = new System.Windows.Forms.Padding(4);
             this.lst_customerdetails.Name = "lst_customerdetails";
-            this.lst_customerdetails.Size = new System.Drawing.Size(876, 359);
+            this.lst_customerdetails.Size = new System.Drawing.Size(893, 396);
+            this.lst_customerdetails.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lst_customerdetails.TabIndex = 0;
             this.lst_customerdetails.UseCompatibleStateImageBehavior = false;
             this.lst_customerdetails.View = System.Windows.Forms.View.Details;
@@ -84,24 +89,45 @@
             // 
             // btn_addcustomer
             // 
-            this.btn_addcustomer.Location = new System.Drawing.Point(407, 401);
+            this.btn_addcustomer.ForeColor = System.Drawing.Color.Black;
+            this.btn_addcustomer.Image = global::ShopProducts.Properties.Resources._2;
+            this.btn_addcustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_addcustomer.Location = new System.Drawing.Point(410, 430);
+            this.btn_addcustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addcustomer.Name = "btn_addcustomer";
-            this.btn_addcustomer.Size = new System.Drawing.Size(75, 23);
+            this.btn_addcustomer.Size = new System.Drawing.Size(98, 39);
             this.btn_addcustomer.TabIndex = 1;
             this.btn_addcustomer.Text = "Add";
+            this.btn_addcustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_addcustomer.UseVisualStyleBackColor = true;
             this.btn_addcustomer.Click += new System.EventHandler(this.btn_addcustomer_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lst_customerdetails);
+            this.groupBox1.Controls.Add(this.btn_addcustomer);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 57);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(907, 474);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Customer List";
+            // 
             // frmCustomerDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 456);
-            this.Controls.Add(this.btn_addcustomer);
-            this.Controls.Add(this.lst_customerdetails);
+            this.BackgroundImage = global::ShopProducts.Properties.Resources.blue_wallpaper_plain;
+            this.ClientSize = new System.Drawing.Size(931, 574);
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomerDetails";
-            this.Text = "frmCustomerDetails";
+            this.Text = "Customer List";
             this.Load += new System.EventHandler(this.frmCustomerDetails_Load);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -115,5 +141,6 @@
         private System.Windows.Forms.ColumnHeader customer_contact;
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Button btn_addcustomer;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -34,11 +34,13 @@
             this.SubProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnsubproduct = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstvwsubproducts
@@ -49,11 +51,11 @@
             this.SubProductName,
             this.UType,
             this.DateTime});
-            this.lstvwsubproducts.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvwsubproducts.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvwsubproducts.GridLines = true;
-            this.lstvwsubproducts.Location = new System.Drawing.Point(1, 60);
+            this.lstvwsubproducts.Location = new System.Drawing.Point(15, 51);
             this.lstvwsubproducts.Name = "lstvwsubproducts";
-            this.lstvwsubproducts.Size = new System.Drawing.Size(755, 419);
+            this.lstvwsubproducts.Size = new System.Drawing.Size(757, 354);
             this.lstvwsubproducts.TabIndex = 0;
             this.lstvwsubproducts.UseCompatibleStateImageBehavior = false;
             this.lstvwsubproducts.View = System.Windows.Forms.View.Details;
@@ -66,13 +68,13 @@
             // 
             // ProductId
             // 
-            this.ProductId.Text = "Product Id";
+            this.ProductId.Text = "Category";
             this.ProductId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ProductId.Width = 150;
             // 
             // SubProductName
             // 
-            this.SubProductName.Text = "Sub Product Name";
+            this.SubProductName.Text = "Product Name";
             this.SubProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SubProductName.Width = 150;
             // 
@@ -87,69 +89,86 @@
             this.DateTime.Text = "Date";
             this.DateTime.Width = 150;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(214, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "From";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(438, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "To";
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(286, 20);
+            this.dateTimePicker1.Location = new System.Drawing.Point(264, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(502, 20);
+            this.dateTimePicker2.Location = new System.Drawing.Point(432, 22);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(153, 23);
             this.dateTimePicker2.TabIndex = 4;
             // 
             // btnsubproduct
             // 
             this.btnsubproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsubproduct.Location = new System.Drawing.Point(350, 486);
+            this.btnsubproduct.ForeColor = System.Drawing.Color.Black;
+            this.btnsubproduct.Image = global::ShopProducts.Properties.Resources._2;
+            this.btnsubproduct.Location = new System.Drawing.Point(353, 411);
             this.btnsubproduct.Name = "btnsubproduct";
-            this.btnsubproduct.Size = new System.Drawing.Size(75, 23);
+            this.btnsubproduct.Size = new System.Drawing.Size(87, 38);
             this.btnsubproduct.TabIndex = 5;
             this.btnsubproduct.Text = "Add";
+            this.btnsubproduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsubproduct.UseVisualStyleBackColor = true;
             this.btnsubproduct.Click += new System.EventHandler(this.btnsubproduct_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lstvwsubproducts);
+            this.groupBox1.Controls.Add(this.btnsubproduct);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(783, 455);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Product List";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(221, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "From";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(405, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 15);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "To";
+            // 
             // frmSubproductDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 516);
-            this.Controls.Add(this.btnsubproduct);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstvwsubproducts);
+            this.BackgroundImage = global::ShopProducts.Properties.Resources.blue_wallpaper_plain;
+            this.ClientSize = new System.Drawing.Size(805, 567);
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSubproductDetails";
-            this.Text = "frmSubproductDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Product List";
             this.Load += new System.EventHandler(this.frmSubproductDetails_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -160,11 +179,12 @@
         private System.Windows.Forms.ColumnHeader ProductId;
         private System.Windows.Forms.ColumnHeader SubProductName;
         private System.Windows.Forms.ColumnHeader UType;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnsubproduct;
         private System.Windows.Forms.ColumnHeader DateTime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

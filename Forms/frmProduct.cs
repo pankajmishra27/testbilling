@@ -20,18 +20,22 @@ namespace ShopProducts.Forms
         private void frmProduct_Load(object sender, EventArgs e)
         {
 
-            lbl_subproductname.Visible = false;
-            lbl_Quantity.Visible = false;
-            lbl_peritemamount.Visible = false;
+            try
+            {
+                List<string> unit = new List<string>();
+                unit.Add("Piece");
+                unit.Add("Box");
+                cmbUnitType.DataSource = unit;
 
-            List<string> unit = new List<string>();
-            unit.Add("Piece");
-            unit.Add("Box");
-            combo_unittype.DataSource = unit;
-
-            List<string> id = new List<string>();
-            id.Add("Product Name");
-            combo_productid.DataSource = id;
+                List<string> id = new List<string>();
+                id.Add("Product Name");
+                cmbCategory.DataSource = id;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+           
         }
 
         private void btn_start_Click(object sender, EventArgs e)
@@ -39,78 +43,20 @@ namespace ShopProducts.Forms
             try
             {
                 DBConnection db = new DBConnection();
-                try
-                {
-                    combo_productid.Text = combo_productid.Text.Trim();
-                    //txt_pid.Text = txt_pid.Text.Trim();
-                }
-                catch (Exception ex)
-                {
 
-                }
-                try
+                if (string.IsNullOrEmpty(txtProductName.Text.Trim()))
                 {
-                    if (!string.IsNullOrEmpty(txt_subpname.Text.Trim()))
-                    {
-                        string Pname = txt_subpname.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_subproductname.Text = "Please Enter Subproduct Name";
-                        lbl_subproductname.Visible = true;
-                        return;
-                    }
-                    //txt_subpname.Text = txt_subpname.Text.Trim();
+                    lblErrorMessage.Text = "Please Enter Product Name";
+                    return;
                 }
-                catch (Exception ex)
-                {
 
-                }
-                try
+                if (string.IsNullOrEmpty(txtQuantity.Text.Trim()))
                 {
-                    if (!string.IsNullOrEmpty(txt_quantity.Text.Trim()))
-                    {
-                        string Pname = txt_quantity.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_Quantity.Text = "Please Enter Quantity";
-                        lbl_Quantity.Visible = true;
-                        return;
-                    }
-                    //txt_quantity.Text = txt_quantity.Text.Trim();
+                    lblErrorMessage.Text = "Please Enter Quantity Name";
+                    return;
                 }
-                catch (Exception ex)
-                {
 
-                }
-                try
-                {
-                    if (!string.IsNullOrEmpty(txt_peritemamount.Text.Trim()))
-                    {
-                        string Pname = txt_peritemamount.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_peritemamount.Text = "Please Enter Peritem Amount";
-                        lbl_peritemamount.Visible = true;
-                        return;
-                    }
-                    //txt_peritemamount.Text = txt_peritemamount.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    combo_unittype.Text = combo_unittype.Text.Trim();
-                }
-                catch (Exception ex)
-                {
-
-                }
-                string Query = "INSERT INTO tbl_Subproduct values(" + combo_productid.SelectedItem + ",'" + txt_subpname.Text.Trim() + "','" + txt_quantity.Text.Trim() + "','" + txt_peritemamount.Text.Trim() + "','" + combo_unittype.SelectedItem + "','" + DateTime.Now + "')";
+                string Query = "INSERT INTO tbl_Subproduct values(" + cmbCategory.SelectedItem + ",'0','" + txtQuantity.Text.Trim() + "','" + txt_peritemamount.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
                 db.RunQuery(Query);
             }
             catch (Exception ex)

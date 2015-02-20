@@ -66,6 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ucFooter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucFooter.Designer.cs">
+      <DependentUpon>ucFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHeader.Designer.cs">
+      <DependentUpon>ucHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbClasses\ApplicationData.cs" />
     <Compile Include="DbClasses\DatabaseHandler.cs" />
     <Compile Include="DbClasses\DBConnection.cs" />
@@ -125,6 +137,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ucFooter.resx">
+      <DependentUpon>ucFooter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +250,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\1.PNG" />
+    <Content Include="Images\2.PNG" />
+    <Content Include="Images\3.PNG" />
+    <Content Include="Images\Start.PNG" />
     <Content Include="MyBill.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -242,6 +261,10 @@
       <DependentUpon>MyBill.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\1.PNG" />
+    <Content Include="Resources\2.PNG" />
+    <Content Include="Resources\3.PNG" />
+    <Content Include="Resources\Start.PNG" />
     <None Include="Resources\background1.jpg" />
     <None Include="Resources\background.jpg" />
     <None Include="Resources\d7d360f0a0ba9129733ca65d76e0eeaa.jpg" />

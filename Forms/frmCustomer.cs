@@ -12,6 +12,9 @@ namespace ShopProducts.Forms
 {
     public partial class frmCustomer : Form
     {
+
+        
+
         public frmCustomer()
         {
             InitializeComponent();
@@ -19,9 +22,7 @@ namespace ShopProducts.Forms
      
         private void frmCustomer_Load(object sender, EventArgs e)
         {
-            lbl_customername.Visible = false;
-            lbl_customeraddress.Visible = false;
-            lbl_customercontact.Visible = false;
+           
         }
 
         private void btn_customerinfo_Click(object sender, EventArgs e)
@@ -29,69 +30,35 @@ namespace ShopProducts.Forms
             try
             {
                 DBConnection db = new DBConnection();
-                try
-                {
-                    if (!string.IsNullOrEmpty(txtcustomername.Text.Trim()))
-                    {
-                        string Pname = txtcustomername.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_customername.Text = "Please Enter Customer Name";
-                        lbl_customername.Visible = true;
-                        return;
-                    }
 
-                    //txtcustomername.Text = txtcustomername.Text.Trim();      
-                }
-                catch (Exception ex)
+                if (string.IsNullOrEmpty(txtcustomername.Text.Trim()))
                 {
-
-                }
-                try
-                {
-                    if (!string.IsNullOrEmpty(txtcustomeraddress.Text.Trim()))
-                    {
-                        string Pname = txtcustomeraddress.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_customeraddress.Text = "Please Enter Customer Address";
-                        lbl_customeraddress.Visible = true;
-                        return;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    
-                }
-                try
-                {
-                    if (!string.IsNullOrEmpty(txtcustomercontact.Text.Trim()))
-                    {
-                        string Pname = txtcustomercontact.Text.Trim();
-                    }
-                    else
-                    {
-                        lbl_customercontact.Text = "Please Enter Customer Contact";
-                        lbl_customercontact.Visible = true;
-                        return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    
+                    //MessageBox.Show("Please Enter Customer Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblErrorMessage.Text = "Please Enter Customer Name";
+                    return;
                 }
 
                 string Query = "INSERT INTO tbl_Customer values('" + txtcustomername.Text.Trim() + "','" + txtcustomeraddress.Text.Trim() + "','" + txtcustomercontact.Text.Trim() + "','" + DateTime.Now + "')";
                 db.RunQuery(Query);
 
+                lblErrorMessage.Text = "Record Added Successfully.";
+                ClearAllTextboxes(this.groupBox1);
             }
             catch (Exception ex)
             {
-              
+                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMessage.Text = "Record Not Added.";
             }
         }
+
+        private void ClearAllTextboxes(Control CC)
+        {
+            foreach (Control X in CC.Controls)
+            {
+                if (X is TextBox)
+                    X.Text = "";
+            }
+        }
+
     }
 }
