@@ -12,14 +12,22 @@ namespace ShopProducts.Forms
 {
     public partial class frmProduct : Form
     {
+        string ProductId { get; set; }
+
         public frmProduct()
         {
             InitializeComponent();
         }
 
+        public frmProduct(string P_Id)
+        {
+            ProductId = P_Id;
+            InitializeComponent();
+        }
+
         private void frmProduct_Load(object sender, EventArgs e)
         {
-
+            DBConnection db = new DBConnection();
             try
             {
                 List<string> unit = new List<string>();
@@ -27,9 +35,13 @@ namespace ShopProducts.Forms
                 unit.Add("Box");
                 cmbUnitType.DataSource = unit;
 
-                List<string> id = new List<string>();
-                id.Add("Product Name");
-                cmbCategory.DataSource = id;
+                string Query = "SELECT * FROM tbl_ProductCategory";
+                DataSet ds = db.GetData(Query);
+
+                cmbCategory.DataSource = ds.Tables[0];
+                cmbCategory.DisplayMember = "ProductName";
+                cmbCategory.ValueMember = "Id";
+                
             }
             catch (Exception ex)
             {
@@ -44,20 +56,34 @@ namespace ShopProducts.Forms
             {
                 DBConnection db = new DBConnection();
 
-                if (string.IsNullOrEmpty(txtProductName.Text.Trim()))
+                if (string.IsNullOrEmpty(ProductId))
                 {
-                    lblErrorMessage.Text = "Please Enter Product Name";
-                    return;
+
+                    if (string.IsNullOrEmpty(txtProductName.Text.Trim()))
+                    {
+                        lblErrorMessage.Text = "Please Enter Product Name";
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(txtQuantity.Text.Trim()))
+                    {
+                        lblErrorMessage.Text = "Please Enter Quantity Name";
+                        return;
+                    }
+
+                    //string Query = "INSERT INTO tbl_Product values(" + cmbCategory.SelectedItem + "','" + txtProductName.Text.Trim() + "','"  + txtQuantity.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
+                    string Query = "INSERT INTO tbl_Product(CategoryId,ProductName,Quantity,UnitType,Date) values('" + cmbCategory.SelectedValue + "','" + txtProductName.Text.Trim() + "','" + txtQuantity.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
+                    db.RunQuery(Query);
                 }
 
-                if (string.IsNullOrEmpty(txtQuantity.Text.Trim()))
+                else
                 {
-                    lblErrorMessage.Text = "Please Enter Quantity Name";
-                    return;
+                    string Query = "UPDATE tbl_Product SET CategoryId = '" + cmbCategory.SelectedValue + "', ProductName ='" + txtProductName.Text.Trim() + "', Quantity = '" + txtQuantity.Text.Trim() + "', UnitType = '" + cmbUnitType.SelectedItem + "', Date = '" + DateTime.Now + "' WHERE Id = " + int.Parse(ProductId);
+                    db.RunQuery(Query);
                 }
 
-                string Query = "INSERT INTO tbl_Subproduct values(" + cmbCategory.SelectedItem + ",'0','" + txtQuantity.Text.Trim() + "','" + txt_peritemamount.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
-                db.RunQuery(Query);
+                frmSubproductDetails frm = new frmSubproductDetails();
+                frm.Show();
             }
             catch (Exception ex)
             {

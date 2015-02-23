@@ -21,61 +21,84 @@ namespace ShopProducts.Forms
 
         private void frmInvoicemain_Load(object sender, EventArgs e)
         {
-
-
-            //lbl_customerid.Visible = false;
-            //lbl_customername.Visible = false;
-
-            List<string> PrID = new List<string>();
-            PrID.Add("01");
-            PrID.Add("02");
-            combo_productid.DataSource = PrID;
-
-            List<string> PrDescription = new List<string>();
-            PrDescription.Add("Cherry");
-            PrDescription.Add("Pineapple");
-            combo_description.DataSource = PrDescription;
-
+            DBConnection db = new DBConnection();
             try
             {
-                string Query = "Select * from tbl_InvoiceMain";
-                DataSet ds = dbConnection.GetData(Query);
-                DataTable dt = ds.Tables[0];
-
-                ListViewItem node;
-
-                for (int i = 0; i < dt.Rows.Count; i++)
+                try
                 {
-                    try
+                    string Query = "SELECT * FROM tbl_Customer";
+                    DataSet ds = db.GetData(Query);
+
+                    combo_invoicecustomerID.DataSource = ds.Tables[0];
+                    combo_invoicecustomerID.DisplayMember = "Id";
+
+                    combo_invoicecustomerName.DataSource = ds.Tables[0];
+                    combo_invoicecustomerName.DisplayMember = "Name";
+
+                    
+
+                    List<string> PrID = new List<string>();
+                    PrID.Add("01");
+                    PrID.Add("02");
+                    combo_productid.DataSource = PrID;
+
+                    List<string> PrDescription = new List<string>();
+                    PrDescription.Add("Cherry");
+                    PrDescription.Add("Pineapple");
+                    combo_description.DataSource = PrDescription;
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                try
+                {
+                    string Query = "Select * from tbl_InvoiceMain";
+                    DataSet ds = dbConnection.GetData(Query);
+                    DataTable dt = ds.Tables[0];
+
+                    ListViewItem node;
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        node = new ListViewItem();
-                        node.Text = dt.Rows[i]["InvId"].ToString();
+                        try
+                        {
+                            node = new ListViewItem();
+                            node.Text = dt.Rows[i]["InvId"].ToString();
 
-                        //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceNo"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceDate"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceCustomer"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceAddress"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceCustomerId"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceChequeNo"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceBank"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceChequeDate"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceNetAmount"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["InvoiceTaxNetAmount"].ToString());
-                        //node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
+                            //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceNo"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceDate"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceCustomer"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceAddress"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceCustomerId"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceChequeNo"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceBank"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceChequeDate"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceNetAmount"].ToString());
+                            node.SubItems.Add(dt.Rows[i]["InvoiceTaxNetAmount"].ToString());
+                            //node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
-                        lst_Invoicemain.Items.Add(node);
+                            lst_Invoicemain.Items.Add(node);
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
                     }
-                    catch (Exception ex)
-                    {
+                }
+                catch (Exception ex)
+                {
 
-                    }
                 }
             }
             catch (Exception ex)
             {
-
+                
             }
+
+            
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -88,8 +111,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_customerid.Text.Trim()))
                     {
-                        txt_customerid.Text = "Please enter customer id";
-                        return;
+                        txt_customerid.Text = "Please enter customer id";                       
                     }
                 }
                 catch (Exception ex)
@@ -100,8 +122,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
                     {
-                        txt_invoicenumber.Text = "Please enter invoice number";
-                        return;
+                        txt_invoicenumber.Text = "Please enter invoice number";                       
                     }
                 }
                 catch (Exception ex)
@@ -112,8 +133,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_customername.Text.Trim()))
                     {
-                        txt_customername.Text = "Please enter customer name";
-                        return;
+                        txt_customername.Text = "Please enter customer name";                        
                     }
                 }
                 catch (Exception ex)
@@ -124,8 +144,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
                     {
-                        txt_customeraddress.Text = "Please enter customer address";
-                        return;
+                        txt_customeraddress.Text = "Please enter customer address";                        
                     }
                 }
                 catch (Exception ex)
@@ -136,8 +155,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_chequenumber.Text.Trim()))
                     {
-                        txt_chequenumber.Text = "Cheque No.";
-                        return;
+                        txt_chequenumber.Text = "Enter Cheque No.";                        
                     }
                 }
                 catch (Exception ex)
@@ -148,8 +166,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_bank.Text.Trim()))
                     {
-                        txt_bank.Text = "Bank name";
-                        return;
+                        txt_bank.Text = " Enter Bank name";
                     }
                 }
                 catch (Exception ex)
@@ -160,8 +177,7 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
                     {
-                        txt_taxamount.Text = "Tax Amount";
-                        return;
+                        txt_taxamount.Text = "Enter Tax Amount";
                     }
                 }
                 catch (Exception ex)
@@ -172,15 +188,21 @@ namespace ShopProducts.Forms
                 {
                     if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
                     {
-                        txt_amount.Text = "Amount";
-                        return;
+                        txt_amount.Text = "Enter Amount";
                     }
                 }
                 catch (Exception ex)
                 {
                     
                 }
-                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + txt_customername.Text.Trim() + "','" + txt_customeraddress.Text.Trim() + "','" + txt_customerid.Text.Trim() + "','" +  txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";//,'" + DateTime.Now + "')";
+                if (string.IsNullOrEmpty(txt_customerid.Text.Trim()) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(txt_customername.Text.Trim()) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                {
+                    return; 
+                }
+
+                
+                //string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + txt_customername.Text.Trim() + "','" + txt_customeraddress.Text.Trim() + "','" + txt_customerid.Text.Trim() + "','" +  txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";//,'" + DateTime.Now + "')";
+                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.SelectedValue + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.SelectedValue + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
                 db.RunQuery(Query);     
             }
             catch (Exception ex)
@@ -188,6 +210,11 @@ namespace ShopProducts.Forms
 
             }
         }
-        
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -24,7 +24,7 @@ namespace ShopProducts.Forms
         {
             try
             {
-                string Query = "Select * from tbl_Subproduct";
+                string Query = "Select * from tbl_Product";
                 DataSet ds = dbConnection.GetData(Query);
                 DataTable dt = ds.Tables[0];
 
@@ -39,14 +39,14 @@ namespace ShopProducts.Forms
 
                         //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
                         //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductId"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["SubproductName"].ToString());
-                        //node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["CategoryId"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
                         //node.SubItems.Add(dt.Rows[i]["PerItemAmount"].ToString());
                         node.SubItems.Add(dt.Rows[i]["UnitType"].ToString());
                         node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
-                        lstvwsubproducts.Items.Add(node);
+                        lstvwproducts.Items.Add(node);
                     }
                     catch (Exception ex)
                     {
@@ -71,6 +71,39 @@ namespace ShopProducts.Forms
 
         }
 
-        
+        private void btn_subproductdetails_Click(object sender, EventArgs e)
+        {
+            DBConnection db = new DBConnection();
+            string id = string.Empty;
+
+            if (!string.IsNullOrEmpty(lstvwproducts.FocusedItem.SubItems[0].Text))
+            {
+                id = lstvwproducts.FocusedItem.SubItems[0].Text;
+            }
+            else
+            {
+                string msg = "Please select a row.";
+            }
+
+
+            string Query = "DELETE FROM tbl_Product WHERE Id =" + int.Parse(id);
+            db.RunQuery(Query);
+
+            frmSubproductDetails frm = new frmSubproductDetails();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string a = string.Empty;
+
+            if (lstvwproducts.SelectedItems.Count > 0)
+            {
+                a = lstvwproducts.SelectedItems[0].Text;
+            }
+
+            frmProduct editproduct = new frmProduct(a);
+            editproduct.Show();
+        }
     }
 }

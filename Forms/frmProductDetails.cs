@@ -25,7 +25,7 @@ namespace ShopProducts.Forms
         {
             try
             {
-                string Query = "Select * from tbl_Product";
+                string Query = "Select * from tbl_ProductCategory";
                 DataSet ds = dbConnection.GetData(Query);
                 DataTable dt = ds.Tables[0];
 
@@ -61,13 +61,56 @@ namespace ShopProducts.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            frmCategory frm = new frmCategory();
             frm.Show();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_deleteproduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                 DBConnection db = new DBConnection();
+            string id = string.Empty;
+
+            if(!string.IsNullOrEmpty(lstvwProduct.FocusedItem.SubItems[0].Text))
+            {            
+                 id = lstvwProduct.FocusedItem.SubItems[0].Text;
+            }
+            else
+            {
+                string msg = "Please select a row.";
+            }
+
+            string Query = "DELETE FROM tbl_ProductCategory WHERE Id =" + int.Parse(id);
+            db.RunQuery(Query);
+
+            frmProductDetails frm = new frmProductDetails();
+            frm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+        }
+
+        private void btn_editproducts_Click(object sender, EventArgs e)
+        {
+            string a = string.Empty;
+
+            if (lstvwProduct.SelectedItems.Count > 0)
+            {
+                a = lstvwProduct.SelectedItems[0].Text;
+            }
+
+            frmCategory editproduct = new frmCategory(a);
+            editproduct.Show();
         }
     }
 }

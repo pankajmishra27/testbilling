@@ -36,6 +36,8 @@
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_addcustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_deletecustomerdetails = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             this.customer_contact,
             this.Date});
             this.lst_customerdetails.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_customerdetails.FullRowSelect = true;
             this.lst_customerdetails.GridLines = true;
             this.lst_customerdetails.Location = new System.Drawing.Point(7, 26);
             this.lst_customerdetails.Margin = new System.Windows.Forms.Padding(4);
@@ -92,12 +95,13 @@
             this.btn_addcustomer.ForeColor = System.Drawing.Color.Black;
             this.btn_addcustomer.Image = global::ShopProducts.Properties.Resources._2;
             this.btn_addcustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_addcustomer.Location = new System.Drawing.Point(410, 430);
+            this.btn_addcustomer.Location = new System.Drawing.Point(245, 430);
             this.btn_addcustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addcustomer.Name = "btn_addcustomer";
             this.btn_addcustomer.Size = new System.Drawing.Size(98, 39);
             this.btn_addcustomer.TabIndex = 1;
             this.btn_addcustomer.Text = "Add";
+            this.btn_addcustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_addcustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_addcustomer.UseVisualStyleBackColor = true;
             this.btn_addcustomer.Click += new System.EventHandler(this.btn_addcustomer_Click);
@@ -105,6 +109,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_deletecustomerdetails);
             this.groupBox1.Controls.Add(this.lst_customerdetails);
             this.groupBox1.Controls.Add(this.btn_addcustomer);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -114,6 +120,34 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer List";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::ShopProducts.Properties.Resources._1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(554, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 38);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Edit";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_deletecustomerdetails
+            // 
+            this.btn_deletecustomerdetails.ForeColor = System.Drawing.Color.Black;
+            this.btn_deletecustomerdetails.Image = global::ShopProducts.Properties.Resources._3;
+            this.btn_deletecustomerdetails.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_deletecustomerdetails.Location = new System.Drawing.Point(396, 431);
+            this.btn_deletecustomerdetails.Name = "btn_deletecustomerdetails";
+            this.btn_deletecustomerdetails.Size = new System.Drawing.Size(98, 38);
+            this.btn_deletecustomerdetails.TabIndex = 2;
+            this.btn_deletecustomerdetails.Text = "Delete";
+            this.btn_deletecustomerdetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_deletecustomerdetails.UseVisualStyleBackColor = true;
+            this.btn_deletecustomerdetails.Click += new System.EventHandler(this.btn_deletecustomerdetails_Click);
             // 
             // frmCustomerDetails
             // 
@@ -142,5 +176,7 @@
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Button btn_addcustomer;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_deletecustomerdetails;
     }
 }

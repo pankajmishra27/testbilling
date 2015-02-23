@@ -43,6 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.combo_invoicecustomerName = new System.Windows.Forms.ComboBox();
+            this.combo_invoicecustomerID = new System.Windows.Forms.ComboBox();
             this.combo_description = new System.Windows.Forms.ComboBox();
             this.combo_productid = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -127,16 +129,16 @@
             // 
             // txt_customerid
             // 
-            this.txt_customerid.Location = new System.Drawing.Point(152, 20);
+            this.txt_customerid.Location = new System.Drawing.Point(457, 15);
             this.txt_customerid.Name = "txt_customerid";
-            this.txt_customerid.Size = new System.Drawing.Size(202, 21);
+            this.txt_customerid.Size = new System.Drawing.Size(162, 21);
             this.txt_customerid.TabIndex = 5;
             // 
             // txt_customername
             // 
-            this.txt_customername.Location = new System.Drawing.Point(152, 52);
+            this.txt_customername.Location = new System.Drawing.Point(457, 56);
             this.txt_customername.Name = "txt_customername";
-            this.txt_customername.Size = new System.Drawing.Size(202, 21);
+            this.txt_customername.Size = new System.Drawing.Size(162, 21);
             this.txt_customername.TabIndex = 6;
             // 
             // groupBox1
@@ -206,6 +208,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.combo_invoicecustomerName);
+            this.groupBox2.Controls.Add(this.combo_invoicecustomerID);
             this.groupBox2.Controls.Add(this.combo_description);
             this.groupBox2.Controls.Add(this.combo_productid);
             this.groupBox2.Controls.Add(this.btn_delete);
@@ -242,6 +246,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Invoice";
             // 
+            // combo_invoicecustomerName
+            // 
+            this.combo_invoicecustomerName.FormattingEnabled = true;
+            this.combo_invoicecustomerName.Location = new System.Drawing.Point(152, 52);
+            this.combo_invoicecustomerName.Name = "combo_invoicecustomerName";
+            this.combo_invoicecustomerName.Size = new System.Drawing.Size(202, 21);
+            this.combo_invoicecustomerName.TabIndex = 31;
+            // 
+            // combo_invoicecustomerID
+            // 
+            this.combo_invoicecustomerID.AllowDrop = true;
+            this.combo_invoicecustomerID.FormattingEnabled = true;
+            this.combo_invoicecustomerID.Location = new System.Drawing.Point(152, 12);
+            this.combo_invoicecustomerID.Name = "combo_invoicecustomerID";
+            this.combo_invoicecustomerID.Size = new System.Drawing.Size(202, 21);
+            this.combo_invoicecustomerID.Sorted = true;
+            this.combo_invoicecustomerID.TabIndex = 30;
+            // 
             // combo_description
             // 
             this.combo_description.FormattingEnabled = true;
@@ -266,6 +288,7 @@
             this.btn_delete.TabIndex = 27;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_add
             // 
@@ -527,5 +550,7 @@
         private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.ComboBox combo_description;
         private System.Windows.Forms.ComboBox combo_productid;
+        private System.Windows.Forms.ComboBox combo_invoicecustomerID;
+        private System.Windows.Forms.ComboBox combo_invoicecustomerName;
     }
 }

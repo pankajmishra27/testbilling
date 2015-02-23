@@ -32,3 +32,4 @@ E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.r
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Controls.ucFooter.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategory.resources
