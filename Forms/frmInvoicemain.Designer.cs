@@ -448,11 +448,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(201, 194);
+            this.label10.Location = new System.Drawing.Point(179, 194);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 15);
+            this.label10.Size = new System.Drawing.Size(115, 15);
             this.label10.TabIndex = 14;
-            this.label10.Text = "Description";
+            this.label10.Text = "Product Description";
             // 
             // label9
             // 
