@@ -34,16 +34,6 @@ namespace ShopProducts.Forms
 
                     combo_invoicecustomerName.DataSource = ds.Tables[0];
                     combo_invoicecustomerName.DisplayMember = "Name";
-
-                    //List<string> PrID = new List<string>();
-                    //PrID.Add("01");
-                    //PrID.Add("02");
-                    //combo_productid.DataSource = PrID;
-
-                    //List<string> PrDescription = new List<string>();
-                    //PrDescription.Add("Cherry");
-                    //PrDescription.Add("Pineapple");
-                    //combo_description.DataSource = PrDescription;
                 }
                 catch (Exception ex)
                 {
@@ -55,8 +45,8 @@ namespace ShopProducts.Forms
                     string Query = "SELECT * FROM tbl_ProductCategory";
                     DataSet ds = db.GetData(Query);
 
-                    combo_productid.DataSource = ds.Tables[0];
-                    combo_productid.DisplayMember = "ProductCode";
+                    combo_productname.DataSource = ds.Tables[0];
+                    combo_productname.DisplayMember = "ProductName";
 
                     combo_description.DataSource = ds.Tables[0];
                     combo_description.DisplayMember = "ProductDescription";
@@ -77,18 +67,6 @@ namespace ShopProducts.Forms
             try
             {
                 DBConnection db = new DBConnection();
-
-                //try
-                //{
-                //    if (string.IsNullOrEmpty(txt_customerid.Text.Trim()))
-                //    {
-                //        txt_customerid.Text = "Please enter customer id";                       
-                //    }
-                //}
-                //catch (Exception ex)
-                //{
-
-                //}
                 try
                 {
                     if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
@@ -100,17 +78,6 @@ namespace ShopProducts.Forms
                 {
 
                 }
-                //try
-                //{
-                //    if (string.IsNullOrEmpty(txt_customername.Text.Trim()))
-                //    {
-                //        txt_customername.Text = "Please enter customer name";                        
-                //    }
-                //}
-                //catch (Exception ex)
-                //{
-                    
-                //}
                 try
                 {
                     if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
@@ -184,8 +151,149 @@ namespace ShopProducts.Forms
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            DBConnection db = new DBConnection();
+            string id = string.Empty;
 
+            if (!string.IsNullOrEmpty(lst_Invoicemain.FocusedItem.SubItems[0].Text))
+            {
+                id = lst_Invoicemain.FocusedItem.SubItems[0].Text;
+            }
+            else
+            {
+                string msg = "Please select a row.";
+            }
+
+
+            string Query = "DELETE FROM tbl_InvoiceSub WHERE Id =" + int.Parse(id);
+            db.RunQuery(Query);
+
+            frmCustomerDetails frm = new frmCustomerDetails();
+            frm.Show();
+            
         }
 
+       private void btn_addsubproduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnection db = new DBConnection();
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
+                    {
+                        txt_invoicenumber.Text = "Enter Invoice Number";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_quantity.Text.Trim()))
+                    {
+                        txt_quantity.Text = "Enter Quantity";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_rate.Text.Trim()))
+                    {
+                        txt_rate.Text = "Enter Rate";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_taxpercent.Text.Trim()))
+                    {
+                        txt_taxpercent.Text = "Enter Tax Percent";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw;
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
+                    {
+                        txt_taxamount.Text = "Enter Tax Amount";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                    {
+                        txt_amount.Text = "Enter Amount";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrName,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + ",'" + combo_productname.Text + "','" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + txt_rate.Text.Trim() + "," + double.Parse(txt_taxpercent.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
+
+                //string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrId,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + "," + int.Parse(combo_productid.Text) + ",'" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + double.Parse(txt_rate.Text.Trim()) + "," + double.Parse(txt_taxpercent.Text.Trim()) +"," + double.Parse(txt_taxamount.Text.Trim()) + ","+ double.Parse(txt_amount.Text.Trim()) + ")";
+                //string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrId,PrDescription,PrQty,PrRate,PrTaxPercent,PrNetAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + "," + int.Parse(combo_productid.Text) + ",'" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + double.Parse(txt_rate.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
+                db.RunQuery(Querys);
+
+                frmInvoicemain frm = new frmInvoicemain();
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btn_addtolistview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem node = new ListViewItem();
+                        node.Text = "1";
+                        node.SubItems.Add(combo_productname.Text);
+                        node.SubItems.Add(combo_description.Text);
+                        node.SubItems.Add(txt_quantity.Text.Trim());
+                        node.SubItems.Add(txt_rate.Text.Trim());
+                        node.SubItems.Add(txt_taxpercent.Text.Trim());
+                        node.SubItems.Add(txt_taxamount.Text.Trim());
+                        node.SubItems.Add(txt_amount.Text.Trim());
+                
+                lst_Invoicemain.Items.Add(node);
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
+        private void btn_deletetolistview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (ListViewItem lvItem in lst_Invoicemain.SelectedItems)
+                {
+                    lst_Invoicemain.Items.Remove(lvItem);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

@@ -88,7 +88,7 @@
             // 
             this.Date.Text = "Date";
             this.Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Date.Width = 122;
+            this.Date.Width = 140;
             // 
             // btn_addcustomer
             // 

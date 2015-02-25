@@ -65,7 +65,7 @@ namespace ShopProducts.Forms
             frm.Show();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void lst_Invoicemain_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

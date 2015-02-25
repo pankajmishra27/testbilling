@@ -58,7 +58,6 @@
             this.lstvwProduct.TabIndex = 0;
             this.lstvwProduct.UseCompatibleStateImageBehavior = false;
             this.lstvwProduct.View = System.Windows.Forms.View.Details;
-            this.lstvwProduct.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // id
             // 
