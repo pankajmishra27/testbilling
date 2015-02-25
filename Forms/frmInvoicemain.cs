@@ -151,24 +151,24 @@ namespace ShopProducts.Forms
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            DBConnection db = new DBConnection();
-            string id = string.Empty;
+            //DBConnection db = new DBConnection();
+            //string id = string.Empty;
 
-            if (!string.IsNullOrEmpty(lst_Invoicemain.FocusedItem.SubItems[0].Text))
-            {
-                id = lst_Invoicemain.FocusedItem.SubItems[0].Text;
-            }
-            else
-            {
-                string msg = "Please select a row.";
-            }
+            //if (!string.IsNullOrEmpty(lst_Invoicemain.FocusedItem.SubItems[0].Text))
+            //{
+            //    id = lst_Invoicemain.FocusedItem.SubItems[0].Text;
+            //}
+            //else
+            //{
+            //    string msg = "Please select a row.";
+            //}
 
 
-            string Query = "DELETE FROM tbl_InvoiceSub WHERE Id =" + int.Parse(id);
-            db.RunQuery(Query);
+            //string Query = "DELETE FROM tbl_InvoiceSub WHERE Id =" + int.Parse(id);
+            //db.RunQuery(Query);
 
-            frmCustomerDetails frm = new frmCustomerDetails();
-            frm.Show();
+            //frmCustomerDetails frm = new frmCustomerDetails();
+            //frm.Show();
             
         }
 
@@ -250,8 +250,8 @@ namespace ShopProducts.Forms
                 //string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrId,PrDescription,PrQty,PrRate,PrTaxPercent,PrNetAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + "," + int.Parse(combo_productid.Text) + ",'" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + double.Parse(txt_rate.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
                 db.RunQuery(Querys);
 
-                frmInvoicemain frm = new frmInvoicemain();
-                frm.Show();
+                //frmInvoicemain frm = new frmInvoicemain();
+                //frm.Show();
             }
             catch (Exception ex)
             {

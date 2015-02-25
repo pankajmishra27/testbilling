@@ -200,5 +200,23 @@ namespace ShopProducts
         {
 
         }
+
+        private void viewProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategory frm = new frmCategory();
+            frm.Show();
+        }
+
+        private void viewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomerDetails frm = new frmCustomerDetails();
+            frm.Show();
+        }
+
+        private void viewInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInvoicemain frm = new frmInvoicemain();
+            frm.Show();
+        }
     }
 }
