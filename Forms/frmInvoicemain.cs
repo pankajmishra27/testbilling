@@ -13,7 +13,7 @@ namespace ShopProducts.Forms
     public partial class frmInvoicemain : Form
     {
         DBConnection dbConnection = new DBConnection();
-
+        int count = 0;
         public frmInvoicemain()
         {
             InitializeComponent();
@@ -264,7 +264,8 @@ namespace ShopProducts.Forms
             try
             {
                 ListViewItem node = new ListViewItem();
-                        node.Text = "1";
+                count++;
+                        node.Text = count.ToString();
                         node.SubItems.Add(combo_productname.Text);
                         node.SubItems.Add(combo_description.Text);
                         node.SubItems.Add(txt_quantity.Text.Trim());
@@ -294,6 +295,11 @@ namespace ShopProducts.Forms
             {
 
             }
+        }
+
+        private void txt_totaltaxamount_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

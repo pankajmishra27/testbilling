@@ -203,7 +203,7 @@ namespace ShopProducts
 
         private void viewProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCategory frm = new frmCategory();
+            frmProductDetails frm = new frmProductDetails();
             frm.Show();
         }
 

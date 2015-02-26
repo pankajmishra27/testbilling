@@ -44,6 +44,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_deletetolistview = new System.Windows.Forms.Button();
+            this.btn_addtolistview = new System.Windows.Forms.Button();
+            this.txt_totalamount = new System.Windows.Forms.TextBox();
+            this.txt_totaltaxamount = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_addsubproduct = new System.Windows.Forms.Button();
             this.combo_productname = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,11 +80,6 @@
             this.txt_customeraddress = new System.Windows.Forms.TextBox();
             this.txt_invoicedate = new System.Windows.Forms.DateTimePicker();
             this.txt_invoicenumber = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txt_totaltaxamount = new System.Windows.Forms.TextBox();
-            this.txt_totalamount = new System.Windows.Forms.TextBox();
-            this.btn_addtolistview = new System.Windows.Forms.Button();
-            this.btn_deletetolistview = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -291,6 +291,53 @@
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product";
+            // 
+            // btn_deletetolistview
+            // 
+            this.btn_deletetolistview.ForeColor = System.Drawing.Color.Black;
+            this.btn_deletetolistview.Location = new System.Drawing.Point(959, 43);
+            this.btn_deletetolistview.Name = "btn_deletetolistview";
+            this.btn_deletetolistview.Size = new System.Drawing.Size(75, 23);
+            this.btn_deletetolistview.TabIndex = 35;
+            this.btn_deletetolistview.Text = "Delete";
+            this.btn_deletetolistview.UseVisualStyleBackColor = true;
+            this.btn_deletetolistview.Click += new System.EventHandler(this.btn_deletetolistview_Click);
+            // 
+            // btn_addtolistview
+            // 
+            this.btn_addtolistview.ForeColor = System.Drawing.Color.Black;
+            this.btn_addtolistview.Location = new System.Drawing.Point(884, 43);
+            this.btn_addtolistview.Name = "btn_addtolistview";
+            this.btn_addtolistview.Size = new System.Drawing.Size(75, 23);
+            this.btn_addtolistview.TabIndex = 34;
+            this.btn_addtolistview.Text = "Add";
+            this.btn_addtolistview.UseVisualStyleBackColor = true;
+            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
+            // 
+            // txt_totalamount
+            // 
+            this.txt_totalamount.Location = new System.Drawing.Point(888, 253);
+            this.txt_totalamount.Name = "txt_totalamount";
+            this.txt_totalamount.Size = new System.Drawing.Size(136, 21);
+            this.txt_totalamount.TabIndex = 33;
+            // 
+            // txt_totaltaxamount
+            // 
+            this.txt_totaltaxamount.Location = new System.Drawing.Point(732, 253);
+            this.txt_totaltaxamount.Name = "txt_totaltaxamount";
+            this.txt_totaltaxamount.Size = new System.Drawing.Size(140, 21);
+            this.txt_totaltaxamount.TabIndex = 32;
+            this.txt_totaltaxamount.TextChanged += new System.EventHandler(this.txt_totaltaxamount_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(918, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btn_addsubproduct
             // 
@@ -555,52 +602,6 @@
             this.txt_invoicenumber.Name = "txt_invoicenumber";
             this.txt_invoicenumber.Size = new System.Drawing.Size(136, 21);
             this.txt_invoicenumber.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(918, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txt_totaltaxamount
-            // 
-            this.txt_totaltaxamount.Location = new System.Drawing.Point(732, 253);
-            this.txt_totaltaxamount.Name = "txt_totaltaxamount";
-            this.txt_totaltaxamount.Size = new System.Drawing.Size(140, 21);
-            this.txt_totaltaxamount.TabIndex = 32;
-            // 
-            // txt_totalamount
-            // 
-            this.txt_totalamount.Location = new System.Drawing.Point(888, 253);
-            this.txt_totalamount.Name = "txt_totalamount";
-            this.txt_totalamount.Size = new System.Drawing.Size(136, 21);
-            this.txt_totalamount.TabIndex = 33;
-            // 
-            // btn_addtolistview
-            // 
-            this.btn_addtolistview.ForeColor = System.Drawing.Color.Black;
-            this.btn_addtolistview.Location = new System.Drawing.Point(884, 43);
-            this.btn_addtolistview.Name = "btn_addtolistview";
-            this.btn_addtolistview.Size = new System.Drawing.Size(75, 23);
-            this.btn_addtolistview.TabIndex = 34;
-            this.btn_addtolistview.Text = "Add";
-            this.btn_addtolistview.UseVisualStyleBackColor = true;
-            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
-            // 
-            // btn_deletetolistview
-            // 
-            this.btn_deletetolistview.ForeColor = System.Drawing.Color.Black;
-            this.btn_deletetolistview.Location = new System.Drawing.Point(959, 43);
-            this.btn_deletetolistview.Name = "btn_deletetolistview";
-            this.btn_deletetolistview.Size = new System.Drawing.Size(75, 23);
-            this.btn_deletetolistview.TabIndex = 35;
-            this.btn_deletetolistview.Text = "Delete";
-            this.btn_deletetolistview.UseVisualStyleBackColor = true;
-            this.btn_deletetolistview.Click += new System.EventHandler(this.btn_deletetolistview_Click);
             // 
             // frmInvoicemain
             // 
