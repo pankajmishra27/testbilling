@@ -31,3 +31,25 @@ E:\TestBilling\testbilling\bin\Debug\MyBill_log.ldf
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\ShopProducts.exe.config
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.exe
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.pdb
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\Database1.mdf
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\Database1_log.LDF
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\DB_Products.mdf
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\DB_Products_log.ldf
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\MyBill.mdf
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\MyBill_log.ldf
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\ShopProducts.exe
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\bin\Debug\ShopProducts.pdb
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.csprojResolveAssemblyReference.cache
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Form1.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomer.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmSubproductDetails.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
+E:\Old F\PROJECTS\Current Projects\Local Projects\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
