@@ -327,7 +327,6 @@
             this.txt_totaltaxamount.Name = "txt_totaltaxamount";
             this.txt_totaltaxamount.Size = new System.Drawing.Size(140, 21);
             this.txt_totaltaxamount.TabIndex = 32;
-            this.txt_totaltaxamount.TextChanged += new System.EventHandler(this.txt_totaltaxamount_TextChanged);
             // 
             // button1
             // 
@@ -566,7 +565,6 @@
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Visible = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_add
             // 
@@ -577,6 +575,7 @@
             this.btn_add.TabIndex = 26;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Visible = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // txt_customeraddress

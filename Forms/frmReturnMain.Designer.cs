@@ -39,9 +39,7 @@
             this.taxamount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.combo_invoicecustomerName = new System.Windows.Forms.ComboBox();
             this.combo_invoicecustomerID = new System.Windows.Forms.ComboBox();
-            this.btn_delete = new System.Windows.Forms.Button();
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_add = new System.Windows.Forms.Button();
             this.btn_deletetolistview = new System.Windows.Forms.Button();
             this.txt_customeraddress = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -65,6 +63,7 @@
             this.txt_taxpercent = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_searchinvoice = new System.Windows.Forms.Button();
             this.txt_invoicenumber = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_bank = new System.Windows.Forms.TextBox();
@@ -74,8 +73,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_customerid = new System.Windows.Forms.TextBox();
-            this.txt_customername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -118,6 +115,7 @@
             this.btn_addtolistview.TabIndex = 34;
             this.btn_addtolistview.Text = "Add";
             this.btn_addtolistview.UseVisualStyleBackColor = true;
+            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
             // 
             // name
             // 
@@ -156,31 +154,10 @@
             this.combo_invoicecustomerID.Sorted = true;
             this.combo_invoicecustomerID.TabIndex = 30;
             // 
-            // btn_delete
-            // 
-            this.btn_delete.ForeColor = System.Drawing.Color.Black;
-            this.btn_delete.Location = new System.Drawing.Point(966, 182);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_delete.TabIndex = 27;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            this.btn_delete.Visible = false;
-            // 
             // amount
             // 
             this.amount.Text = "Amount";
             this.amount.Width = 154;
-            // 
-            // btn_add
-            // 
-            this.btn_add.ForeColor = System.Drawing.Color.Black;
-            this.btn_add.Location = new System.Drawing.Point(859, 181);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_add.TabIndex = 26;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
             // 
             // btn_deletetolistview
             // 
@@ -225,33 +202,31 @@
             this.groupBox3.Controls.Add(this.txt_taxpercent);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(10, 205);
+            this.groupBox3.Location = new System.Drawing.Point(10, 182);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1037, 307);
+            this.groupBox3.Size = new System.Drawing.Size(1037, 328);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // txt_totalamount
             // 
-            this.txt_totalamount.Location = new System.Drawing.Point(888, 253);
+            this.txt_totalamount.Location = new System.Drawing.Point(888, 263);
             this.txt_totalamount.Name = "txt_totalamount";
             this.txt_totalamount.Size = new System.Drawing.Size(136, 21);
             this.txt_totalamount.TabIndex = 33;
             // 
             // txt_totaltaxamount
             // 
-            this.txt_totaltaxamount.Location = new System.Drawing.Point(732, 253);
+            this.txt_totaltaxamount.Location = new System.Drawing.Point(732, 262);
             this.txt_totaltaxamount.Name = "txt_totaltaxamount";
             this.txt_totaltaxamount.Size = new System.Drawing.Size(140, 21);
             this.txt_totaltaxamount.TabIndex = 32;
-            this.txt_totaltaxamount.TextChanged += new System.EventHandler(this.txt_totaltaxamount_TextChanged);
             // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(918, 279);
+            this.button1.Location = new System.Drawing.Point(895, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 31;
@@ -261,7 +236,7 @@
             // btn_addsubproduct
             // 
             this.btn_addsubproduct.ForeColor = System.Drawing.Color.Black;
-            this.btn_addsubproduct.Location = new System.Drawing.Point(801, 280);
+            this.btn_addsubproduct.Location = new System.Drawing.Point(800, 297);
             this.btn_addsubproduct.Name = "btn_addsubproduct";
             this.btn_addsubproduct.Size = new System.Drawing.Size(75, 23);
             this.btn_addsubproduct.TabIndex = 30;
@@ -347,7 +322,7 @@
             this.lst_Invoicemain.GridLines = true;
             this.lst_Invoicemain.Location = new System.Drawing.Point(6, 72);
             this.lst_Invoicemain.Name = "lst_Invoicemain";
-            this.lst_Invoicemain.Size = new System.Drawing.Size(1025, 174);
+            this.lst_Invoicemain.Size = new System.Drawing.Size(1025, 181);
             this.lst_Invoicemain.TabIndex = 25;
             this.lst_Invoicemain.UseCompatibleStateImageBehavior = false;
             this.lst_Invoicemain.View = System.Windows.Forms.View.Details;
@@ -421,18 +396,15 @@
             // 
             this.groupBox2.BackgroundImage = global::ShopProducts.Properties.Resources.background;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox2.Controls.Add(this.btn_searchinvoice);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.combo_invoicecustomerName);
             this.groupBox2.Controls.Add(this.combo_invoicecustomerID);
-            this.groupBox2.Controls.Add(this.btn_delete);
-            this.groupBox2.Controls.Add(this.btn_add);
             this.groupBox2.Controls.Add(this.txt_customeraddress);
             this.groupBox2.Controls.Add(this.txt_invoicedate);
             this.groupBox2.Controls.Add(this.txt_invoicenumber);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_customerid);
-            this.groupBox2.Controls.Add(this.txt_customername);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -446,9 +418,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Return";
             // 
+            // btn_searchinvoice
+            // 
+            this.btn_searchinvoice.BackColor = System.Drawing.Color.Transparent;
+            this.btn_searchinvoice.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_searchinvoice.ForeColor = System.Drawing.Color.Black;
+            this.btn_searchinvoice.Location = new System.Drawing.Point(962, 18);
+            this.btn_searchinvoice.Name = "btn_searchinvoice";
+            this.btn_searchinvoice.Size = new System.Drawing.Size(75, 23);
+            this.btn_searchinvoice.TabIndex = 33;
+            this.btn_searchinvoice.Text = "Search";
+            this.btn_searchinvoice.UseVisualStyleBackColor = false;
+            this.btn_searchinvoice.Click += new System.EventHandler(this.btn_searchinvoice_Click);
+            // 
             // txt_invoicenumber
             // 
-            this.txt_invoicenumber.Location = new System.Drawing.Point(905, 21);
+            this.txt_invoicenumber.Location = new System.Drawing.Point(820, 19);
             this.txt_invoicenumber.Name = "txt_invoicenumber";
             this.txt_invoicenumber.Size = new System.Drawing.Size(136, 21);
             this.txt_invoicenumber.TabIndex = 10;
@@ -535,29 +520,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Id";
             // 
-            // txt_customerid
-            // 
-            this.txt_customerid.Location = new System.Drawing.Point(457, 15);
-            this.txt_customerid.Name = "txt_customerid";
-            this.txt_customerid.Size = new System.Drawing.Size(162, 21);
-            this.txt_customerid.TabIndex = 5;
-            this.txt_customerid.Visible = false;
-            // 
-            // txt_customername
-            // 
-            this.txt_customername.Location = new System.Drawing.Point(457, 56);
-            this.txt_customername.Name = "txt_customername";
-            this.txt_customername.Size = new System.Drawing.Size(162, 21);
-            this.txt_customername.TabIndex = 6;
-            this.txt_customername.Visible = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(805, 21);
+            this.label4.Location = new System.Drawing.Point(745, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 3;
@@ -632,9 +601,7 @@
         private System.Windows.Forms.ColumnHeader taxamount;
         private System.Windows.Forms.ComboBox combo_invoicecustomerName;
         private System.Windows.Forms.ComboBox combo_invoicecustomerID;
-        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ColumnHeader amount;
-        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_deletetolistview;
         private System.Windows.Forms.TextBox txt_customeraddress;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -667,12 +634,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_customerid;
-        private System.Windows.Forms.TextBox txt_customername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_searchinvoice;
 
     }
 }
