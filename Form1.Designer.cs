@@ -39,6 +39,16 @@
             this.lbl_code = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_productcode
@@ -143,12 +153,82 @@
             this.lbl_description.TabIndex = 13;
             this.lbl_description.Text = "L_Descp";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addProductToolStripMenuItem,
+            this.createToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1005, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // addProductToolStripMenuItem
+            // 
+            this.addProductToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewProductToolStripMenuItem,
+            this.viewCustomerToolStripMenuItem,
+            this.viewInvoiceToolStripMenuItem});
+            this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.addProductToolStripMenuItem.Text = "File";
+            // 
+            // viewProductToolStripMenuItem
+            // 
+            this.viewProductToolStripMenuItem.Name = "viewProductToolStripMenuItem";
+            this.viewProductToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.viewProductToolStripMenuItem.Text = "View Product";
+            this.viewProductToolStripMenuItem.Click += new System.EventHandler(this.viewProductToolStripMenuItem_Click);
+            // 
+            // viewCustomerToolStripMenuItem
+            // 
+            this.viewCustomerToolStripMenuItem.Name = "viewCustomerToolStripMenuItem";
+            this.viewCustomerToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.viewCustomerToolStripMenuItem.Text = "View Customer";
+            this.viewCustomerToolStripMenuItem.Click += new System.EventHandler(this.viewCustomerToolStripMenuItem_Click);
+            // 
+            // viewInvoiceToolStripMenuItem
+            // 
+            this.viewInvoiceToolStripMenuItem.Name = "viewInvoiceToolStripMenuItem";
+            this.viewInvoiceToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.viewInvoiceToolStripMenuItem.Text = "View Invoice";
+            this.viewInvoiceToolStripMenuItem.Click += new System.EventHandler(this.viewInvoiceToolStripMenuItem_Click);
+            // 
+            // createToolStripMenuItem
+            // 
+            this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createProductToolStripMenuItem,
+            this.createCustomerToolStripMenuItem,
+            this.createInvoiceToolStripMenuItem});
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.createToolStripMenuItem.Text = "Create";
+            // 
+            // createProductToolStripMenuItem
+            // 
+            this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.createProductToolStripMenuItem.Text = "Create Product";
+            // 
+            // createCustomerToolStripMenuItem
+            // 
+            this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.createCustomerToolStripMenuItem.Text = "Create Customer";
+            // 
+            // createInvoiceToolStripMenuItem
+            // 
+            this.createInvoiceToolStripMenuItem.Name = "createInvoiceToolStripMenuItem";
+            this.createInvoiceToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.createInvoiceToolStripMenuItem.Text = "Create Invoice";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ShopProducts.Properties.Resources.background1;
-            this.ClientSize = new System.Drawing.Size(681, 458);
+            this.BackgroundImage = global::ShopProducts.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(1005, 555);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_code);
@@ -160,9 +240,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_productcode);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +265,15 @@
         private System.Windows.Forms.Label lbl_code;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_description;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewInvoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createInvoiceToolStripMenuItem;
 
     }
 }

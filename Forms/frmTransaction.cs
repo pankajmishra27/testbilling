@@ -33,6 +33,15 @@ namespace ShopProducts.Forms
 
             try
             {
+                combo_subproductid.Text = combo_subproductid.Text.Trim();                    
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            try
+            {
                 if (string.IsNullOrEmpty(txt_quantity.Text.Trim()))
                     {
                         txt_quantity.Text = "Please enter quantity";
@@ -45,11 +54,11 @@ namespace ShopProducts.Forms
             }
             try
             {
-                if (string.IsNullOrEmpty(txt_status.Text.Trim()))
-                    {
-                        txt_status.Text = "Please enter status";
-                        return;
-                    }
+                //if (string.IsNullOrEmpty(txt_status.Text.Trim()))
+                //    {
+                //        txt_status.Text = "Please enter status";
+                //        return;
+                //    }
             }
             catch (Exception ex)
             {
@@ -68,8 +77,8 @@ namespace ShopProducts.Forms
               
             }
 
-            string Query = "INSERT INTO tbl_InvoiceMain values(" + combo_subproductid.Text.Trim() + ",'" + txt_quantity.Text.Trim() + ",'" + txt_status.Text.Trim() + "','" + txt_remark.Text.Trim() + "','" + DateTime.Now + "')";
-            db.RunQuery(Query);  
+            //string Query = "INSERT INTO tbl_Transaction values('" + combo_subproductid.SelectedItem + "'," + txt_quantity.Text.Trim() + ",'" + txt_status.Text.Trim() + "','" + txt_remark.Text.Trim() + "','" + DateTime.Now + "')";
+            //db.RunQuery(Query);  
         }
     }
 }

@@ -66,6 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ucFooter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucFooter.Designer.cs">
+      <DependentUpon>ucFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHeader.Designer.cs">
+      <DependentUpon>ucHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbClasses\ApplicationData.cs" />
     <Compile Include="DbClasses\DatabaseHandler.cs" />
     <Compile Include="DbClasses\DBConnection.cs" />
@@ -80,6 +92,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCustomer.cs">
       <SubType>Form</SubType>
@@ -111,6 +129,12 @@
     <Compile Include="Forms\frmProductDetails.Designer.cs">
       <DependentUpon>frmProductDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmReturnMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReturnMain.Designer.cs">
+      <DependentUpon>frmReturnMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSubproductDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +149,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ucFooter.resx">
+      <DependentUpon>ucFooter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
@@ -142,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProductDetails.resx">
       <DependentUpon>frmProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReturnMain.resx">
+      <DependentUpon>frmReturnMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSubproductDetails.resx">
       <DependentUpon>frmSubproductDetails.cs</DependentUpon>
@@ -235,6 +268,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\1.PNG" />
+    <Content Include="Images\2.PNG" />
+    <Content Include="Images\3.PNG" />
+    <Content Include="Images\Start.PNG" />
     <Content Include="MyBill.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -242,6 +279,10 @@
       <DependentUpon>MyBill.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\1.PNG" />
+    <Content Include="Resources\2.PNG" />
+    <Content Include="Resources\3.PNG" />
+    <Content Include="Resources\Start.PNG" />
     <None Include="Resources\background1.jpg" />
     <None Include="Resources\background.jpg" />
     <None Include="Resources\d7d360f0a0ba9129733ca65d76e0eeaa.jpg" />

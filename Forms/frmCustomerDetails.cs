@@ -61,5 +61,40 @@ namespace ShopProducts.Forms
             frmCustomer frm = new frmCustomer();
             frm.Show();
         }
+
+        private void btn_deletecustomerdetails_Click(object sender, EventArgs e)
+        {
+            DBConnection db = new DBConnection();
+            string id = string.Empty;
+
+            if(!string.IsNullOrEmpty(lst_customerdetails.FocusedItem.SubItems[0].Text))
+            {            
+                 id = lst_customerdetails.FocusedItem.SubItems[0].Text;
+            }
+            else
+            {
+                string msg = "Please select a row.";
+            }
+
+
+            string Query = "DELETE FROM tbl_Customer WHERE Id =" + int.Parse(id);
+            db.RunQuery(Query);
+
+            frmCustomerDetails frm = new frmCustomerDetails();
+            frm.Show();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string a = string.Empty;
+            if (lst_customerdetails.SelectedItems.Count>0)
+            {
+               a =  lst_customerdetails.SelectedItems[0].Text;
+            }
+
+            frmCustomer editcustomer = new frmCustomer(a);
+            editcustomer.Show();
+        }
     }
 }
