@@ -57,6 +57,7 @@
             this.txt_productcode.Name = "txt_productcode";
             this.txt_productcode.Size = new System.Drawing.Size(192, 20);
             this.txt_productcode.TabIndex = 0;
+            this.txt_productcode.Visible = false;
             // 
             // label1
             // 
@@ -66,6 +67,7 @@
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Product Code";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -75,6 +77,7 @@
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Product Description";
+            this.label2.Visible = false;
             // 
             // txt_productdescription
             // 
@@ -82,6 +85,7 @@
             this.txt_productdescription.Name = "txt_productdescription";
             this.txt_productdescription.Size = new System.Drawing.Size(192, 20);
             this.txt_productdescription.TabIndex = 3;
+            this.txt_productdescription.Visible = false;
             // 
             // btn_save
             // 
@@ -91,6 +95,7 @@
             this.btn_save.TabIndex = 7;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Visible = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_close
@@ -101,6 +106,7 @@
             this.btn_close.TabIndex = 8;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Visible = false;
             // 
             // label4
             // 
@@ -110,6 +116,7 @@
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Product Name";
+            this.label4.Visible = false;
             // 
             // txt_productname
             // 
@@ -117,6 +124,7 @@
             this.txt_productname.Name = "txt_productname";
             this.txt_productname.Size = new System.Drawing.Size(192, 20);
             this.txt_productname.TabIndex = 10;
+            this.txt_productname.Visible = false;
             // 
             // lbl_code
             // 
@@ -129,6 +137,7 @@
             this.lbl_code.Size = new System.Drawing.Size(50, 13);
             this.lbl_code.TabIndex = 11;
             this.lbl_code.Text = "L_Code";
+            this.lbl_code.Visible = false;
             this.lbl_code.Click += new System.EventHandler(this.lbl_code_Click);
             // 
             // lbl_name
@@ -141,6 +150,7 @@
             this.lbl_name.Size = new System.Drawing.Size(53, 13);
             this.lbl_name.TabIndex = 12;
             this.lbl_name.Text = "L_Name";
+            this.lbl_name.Visible = false;
             // 
             // lbl_description
             // 
@@ -152,6 +162,7 @@
             this.lbl_description.Size = new System.Drawing.Size(57, 13);
             this.lbl_description.TabIndex = 13;
             this.lbl_description.Text = "L_Descp";
+            this.lbl_description.Visible = false;
             // 
             // menuStrip1
             // 
@@ -177,14 +188,14 @@
             // viewProductToolStripMenuItem
             // 
             this.viewProductToolStripMenuItem.Name = "viewProductToolStripMenuItem";
-            this.viewProductToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.viewProductToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.viewProductToolStripMenuItem.Text = "View Product";
             this.viewProductToolStripMenuItem.Click += new System.EventHandler(this.viewProductToolStripMenuItem_Click);
             // 
             // viewCustomerToolStripMenuItem
             // 
             this.viewCustomerToolStripMenuItem.Name = "viewCustomerToolStripMenuItem";
-            this.viewCustomerToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.viewCustomerToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.viewCustomerToolStripMenuItem.Text = "View Customer";
             this.viewCustomerToolStripMenuItem.Click += new System.EventHandler(this.viewCustomerToolStripMenuItem_Click);
             // 

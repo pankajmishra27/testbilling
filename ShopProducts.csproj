@@ -254,13 +254,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.LDF">
-      <DependentUpon>Database1.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="DB_Products.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

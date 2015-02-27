@@ -49,7 +49,7 @@
             this.txt_totalamount = new System.Windows.Forms.TextBox();
             this.txt_totaltaxamount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_addsubproduct = new System.Windows.Forms.Button();
+            this.btn_Saveinvoice = new System.Windows.Forms.Button();
             this.combo_productname = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.combo_description = new System.Windows.Forms.ComboBox();
@@ -268,7 +268,7 @@
             this.groupBox3.Controls.Add(this.txt_totalamount);
             this.groupBox3.Controls.Add(this.txt_totaltaxamount);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.btn_addsubproduct);
+            this.groupBox3.Controls.Add(this.btn_Saveinvoice);
             this.groupBox3.Controls.Add(this.combo_productname);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.combo_description);
@@ -338,16 +338,15 @@
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btn_addsubproduct
+            // btn_Saveinvoice
             // 
-            this.btn_addsubproduct.ForeColor = System.Drawing.Color.Black;
-            this.btn_addsubproduct.Location = new System.Drawing.Point(801, 280);
-            this.btn_addsubproduct.Name = "btn_addsubproduct";
-            this.btn_addsubproduct.Size = new System.Drawing.Size(75, 23);
-            this.btn_addsubproduct.TabIndex = 30;
-            this.btn_addsubproduct.Text = "Save";
-            this.btn_addsubproduct.UseVisualStyleBackColor = true;
-            this.btn_addsubproduct.Click += new System.EventHandler(this.btn_addsubproduct_Click);
+            this.btn_Saveinvoice.ForeColor = System.Drawing.Color.Black;
+            this.btn_Saveinvoice.Location = new System.Drawing.Point(801, 280);
+            this.btn_Saveinvoice.Name = "btn_Saveinvoice";
+            this.btn_Saveinvoice.Size = new System.Drawing.Size(75, 23);
+            this.btn_Saveinvoice.TabIndex = 30;
+            this.btn_Saveinvoice.Text = "Save";
+            this.btn_Saveinvoice.UseVisualStyleBackColor = true;
             // 
             // combo_productname
             // 
@@ -669,7 +668,7 @@
         private System.Windows.Forms.ComboBox combo_invoicecustomerID;
         private System.Windows.Forms.ComboBox combo_invoicecustomerName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_addsubproduct;
+        private System.Windows.Forms.Button btn_Saveinvoice;
         private System.Windows.Forms.TextBox txt_totalamount;
         private System.Windows.Forms.TextBox txt_totaltaxamount;
         private System.Windows.Forms.Button button1;
