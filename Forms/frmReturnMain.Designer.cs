@@ -115,6 +115,7 @@
             this.btn_addtolistview.TabIndex = 34;
             this.btn_addtolistview.Text = "Add";
             this.btn_addtolistview.UseVisualStyleBackColor = true;
+            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
             // 
             // name
             // 

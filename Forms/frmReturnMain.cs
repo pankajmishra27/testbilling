@@ -37,5 +37,10 @@ namespace ShopProducts.Forms
           txt_invoicedate.Text = dt.Rows[0]["InvoiceDate"].ToString();
           txt_bank.Text = dt.Rows[0]["InvoiceBank"].ToString();
        }
+
+      private void btn_addtolistview_Click(object sender, EventArgs e)
+      {
+
+      }
     }
 }
