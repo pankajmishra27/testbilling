@@ -163,17 +163,25 @@ namespace ShopProducts.Forms
               
                     string Query = "INSERT INTO tbl_ProductCategory values(" + txt_categorycode.Text.Trim() + ",'" + txt_categoryname.Text.Trim() + "','" + txt_categorydescription.Text.Trim() + "','" + DateTime.Now + "')";
                     db.RunQuery(Query);
+
+                    string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Category Added" + "','" + DateTime.Now + "')";
+                    db.RunQuery(Querys);
                 }
                 else
                 {
                     string Query = "UPDATE tbl_ProductCategory SET ProductCode = '" + txt_categorycode.Text.Trim() + "', ProductName ='" + txt_categoryname.Text.Trim() + "', ProductDescription = '" + txt_categorydescription.Text.Trim() + "' WHERE Id = " + int.Parse(ProductId);
                     db.RunQuery(Query);
+
+                    string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Category Added" + "','" + DateTime.Now + "')";
+                    db.RunQuery(Querys);
                 }
+
+
                
                     
                 
 
-                frmProductDetails frm = new frmProductDetails();
+                frmCategoryDetails frm = new frmCategoryDetails();
                 frm.Show();
 
             }

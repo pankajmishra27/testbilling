@@ -347,6 +347,7 @@
             this.btn_Saveinvoice.TabIndex = 30;
             this.btn_Saveinvoice.Text = "Save";
             this.btn_Saveinvoice.UseVisualStyleBackColor = true;
+            this.btn_Saveinvoice.Click += new System.EventHandler(this.btn_Saveinvoice_Click_1);
             // 
             // combo_productname
             // 

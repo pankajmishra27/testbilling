@@ -151,176 +151,176 @@ namespace ShopProducts.Forms
             }
         }
 
-        private void btn_Saveinvoice_Click(object sender, EventArgs e)
-        {
+        //private void btn_Saveinvoice_Click(object sender, EventArgs e)
+        //{
 
-            try
-            {
-                DBConnection db = new DBConnection();
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
-                    {
-                        txt_invoicenumber.Text = "Please enter invoice number";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //    try
+        //    {
+        //        DBConnection db = new DBConnection();
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
+        //            {
+        //                txt_invoicenumber.Text = "Please enter invoice number";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
-                    {
-                        txt_customeraddress.Text = "Please enter customer address";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
+        //            {
+        //                txt_customeraddress.Text = "Please enter customer address";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_chequenumber.Text.Trim()))
-                    {
-                        txt_chequenumber.Text = "Enter Cheque No.";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_chequenumber.Text.Trim()))
+        //            {
+        //                txt_chequenumber.Text = "Enter Cheque No.";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_bank.Text.Trim()))
-                    {
-                        txt_bank.Text = " Enter Bank name";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_bank.Text.Trim()))
+        //            {
+        //                txt_bank.Text = " Enter Bank name";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
-                    {
-                        txt_taxamount.Text = "Enter Tax Amount";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
+        //            {
+        //                txt_taxamount.Text = "Enter Tax Amount";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                try
-                {
-                    if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
-                    {
-                        txt_amount.Text = "Enter Amount";
-                    }
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        try
+        //        {
+        //            if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
+        //            {
+        //                txt_amount.Text = "Enter Amount";
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                }
-                if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
-                {
-                    return;
-                }
+        //        }
+        //        if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
+        //        {
+        //            return;
+        //        }
 
-                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
-                db.RunQuery(Query);
-            }
-            catch (Exception ex)
-            {
+        //        string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
+        //        db.RunQuery(Query);
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-            }
-           //try
-           // {
-           //     DBConnection db = new DBConnection();
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
-           //         {
-           //             txt_invoicenumber.Text = "Enter Invoice Number";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //    }
+        //   //try
+        //   // {
+        //   //     DBConnection db = new DBConnection();
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
+        //   //         {
+        //   //             txt_invoicenumber.Text = "Enter Invoice Number";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
 
-           //     }
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_quantity.Text.Trim()))
-           //         {
-           //             txt_quantity.Text = "Enter Quantity";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //   //     }
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_quantity.Text.Trim()))
+        //   //         {
+        //   //             txt_quantity.Text = "Enter Quantity";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
 
-           //     }
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_rate.Text.Trim()))
-           //         {
-           //             txt_rate.Text = "Enter Rate";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //   //     }
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_rate.Text.Trim()))
+        //   //         {
+        //   //             txt_rate.Text = "Enter Rate";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
 
-           //     }
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_taxpercent.Text.Trim()))
-           //         {
-           //             txt_taxpercent.Text = "Enter Tax Percent";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //   //     }
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_taxpercent.Text.Trim()))
+        //   //         {
+        //   //             txt_taxpercent.Text = "Enter Tax Percent";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
                     
-           //         throw;
-           //     }
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
-           //         {
-           //             txt_taxamount.Text = "Enter Tax Amount";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //   //         throw;
+        //   //     }
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
+        //   //         {
+        //   //             txt_taxamount.Text = "Enter Tax Amount";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
 
-           //     }
-           //     try
-           //     {
-           //         if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
-           //         {
-           //             txt_amount.Text = "Enter Amount";
-           //         }
-           //     }
-           //     catch (Exception ex)
-           //     {
+        //   //     }
+        //   //     try
+        //   //     {
+        //   //         if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
+        //   //         {
+        //   //             txt_amount.Text = "Enter Amount";
+        //   //         }
+        //   //     }
+        //   //     catch (Exception ex)
+        //   //     {
 
-           //     }
+        //   //     }
 
-           //    //If we add totaltax amount & total amount from listview
-           //     string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrName,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + ",'" + combo_productname.Text + "','" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + txt_rate.Text.Trim() + "," + double.Parse(txt_taxpercent.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
+        //   //    //If we add totaltax amount & total amount from listview
+        //   //     string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrName,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + ",'" + combo_productname.Text + "','" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + txt_rate.Text.Trim() + "," + double.Parse(txt_taxpercent.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
                
                
-           //    // if we add only tax amount & MAOUNT 
-           //    // string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrName,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + ",'" + combo_productname.Text + "','" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + txt_rate.Text.Trim() + "," + double.Parse(txt_taxpercent.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
-           //     db.RunQuery(Querys);
+        //   //    // if we add only tax amount & MAOUNT 
+        //   //    // string Querys = "INSERT INTO tbl_InvoiceSub(InvId,PrName,PrDescription,PrQty,PrRate,PrTaxPercent,PrTaxAmount,PrAmount) VALUES(" + int.Parse(txt_invoicenumber.Text.Trim()) + ",'" + combo_productname.Text + "','" + combo_description.Text + "'," + double.Parse(txt_quantity.Text.Trim()) + "," + txt_rate.Text.Trim() + "," + double.Parse(txt_taxpercent.Text.Trim()) + "," + double.Parse(txt_taxamount.Text.Trim()) + "," + double.Parse(txt_amount.Text.Trim()) + ")";
+        //   //     db.RunQuery(Querys);
 
                 
-           // }
-           // catch (Exception ex)
-           // {
+        //   // }
+        //   // catch (Exception ex)
+        //   // {
 
-           // }
-        }
+        //   // }
+        //}
 
         private void btn_addtolistview_Click(object sender, EventArgs e)
         {
@@ -444,6 +444,91 @@ namespace ShopProducts.Forms
                 {
                     lst_Invoicemain.Items.Remove(lvItem);
                 }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btn_Saveinvoice_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnection db = new DBConnection();
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()))
+                    {
+                        txt_invoicenumber.Text = "Please enter invoice number";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_customeraddress.Text.Trim()))
+                    {
+                        txt_customeraddress.Text = "Please enter customer address";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_chequenumber.Text.Trim()))
+                    {
+                        txt_chequenumber.Text = "Enter Cheque No.";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_bank.Text.Trim()))
+                    {
+                        txt_bank.Text = " Enter Bank name";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_taxamount.Text.Trim()))
+                    {
+                        txt_taxamount.Text = "Enter Tax Amount";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                    {
+                        txt_amount.Text = "Enter Amount";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                {
+                    return;
+                }
+
+                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
+                db.RunQuery(Query);
             }
             catch (Exception ex)
             {

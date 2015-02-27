@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using ShopProducts.DbClasses;
 
 namespace ShopProducts.Forms
@@ -21,11 +20,11 @@ namespace ShopProducts.Forms
             InitializeComponent();
         }
 
-        private void frmProductDetails_Load(object sender, EventArgs e)
+        private void frmSubproductDetails_Load(object sender, EventArgs e)
         {
             try
             {
-                string Query = "Select * from tbl_ProductCategory";
+                string Query = "Select * from tbl_Product";
                 DataSet ds = dbConnection.GetData(Query);
                 DataTable dt = ds.Tables[0];
 
@@ -39,16 +38,19 @@ namespace ShopProducts.Forms
                         node.Text = dt.Rows[i]["Id"].ToString();
 
                         //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductCode"].ToString());
+                        //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["CategoryId"].ToString());
                         node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductDescription"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
+                        //node.SubItems.Add(dt.Rows[i]["PerItemAmount"].ToString());
+                        //node.SubItems.Add(dt.Rows[i]["UnitType"].ToString());
                         node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
-                        lstvwProduct.Items.Add(node);
+                        lstvwproducts.Items.Add(node);
                     }
                     catch (Exception ex)
                     {
-                        
+
                     }
                 }
             }
@@ -56,60 +58,51 @@ namespace ShopProducts.Forms
             {
 
             }
-      
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnsubproduct_Click(object sender, EventArgs e)
         {
-            frmCategory frm = new frmCategory();
+            frmProduct frm = new frmProduct();
             frm.Show();
         }
 
-        private void lst_Invoicemain_SelectedIndexChanged(object sender, EventArgs e)
+        private void lstvwsubproducts_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_deleteproduct_Click(object sender, EventArgs e)
+        private void btn_subproductdetails_Click(object sender, EventArgs e)
         {
-            try
-            {
-                 DBConnection db = new DBConnection();
+            DBConnection db = new DBConnection();
             string id = string.Empty;
 
-            if(!string.IsNullOrEmpty(lstvwProduct.FocusedItem.SubItems[0].Text))
-            {            
-                 id = lstvwProduct.FocusedItem.SubItems[0].Text;
+            if (!string.IsNullOrEmpty(lstvwproducts.FocusedItem.SubItems[0].Text))
+            {
+                id = lstvwproducts.FocusedItem.SubItems[0].Text;
             }
             else
             {
                 string msg = "Please select a row.";
             }
 
-            string Query = "DELETE FROM tbl_ProductCategory WHERE Id =" + int.Parse(id);
+
+            string Query = "DELETE FROM tbl_Product WHERE Id =" + int.Parse(id);
             db.RunQuery(Query);
 
             frmProductDetails frm = new frmProductDetails();
             frm.Show();
-
-            }
-            catch (Exception ex)
-            {
-                
-            }
-
         }
 
-        private void btn_editproducts_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string a = string.Empty;
 
-            if (lstvwProduct.SelectedItems.Count > 0)
+            if (lstvwproducts.SelectedItems.Count > 0)
             {
-                a = lstvwProduct.SelectedItems[0].Text;
+                a = lstvwproducts.SelectedItems[0].Text;
             }
 
-            frmCategory editproduct = new frmCategory(a);
+            frmProduct editproduct = new frmProduct(a);
             editproduct.Show();
         }
     }

@@ -123,11 +123,11 @@
     <Compile Include="Forms\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmProductDetails.cs">
+    <Compile Include="Forms\frmCategoryDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmProductDetails.Designer.cs">
-      <DependentUpon>frmProductDetails.cs</DependentUpon>
+    <Compile Include="Forms\frmCategoryDetails.Designer.cs">
+      <DependentUpon>frmCategoryDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmReturnMain.cs">
       <SubType>Form</SubType>
@@ -135,11 +135,11 @@
     <Compile Include="Forms\frmReturnMain.Designer.cs">
       <DependentUpon>frmReturnMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSubproductDetails.cs">
+    <Compile Include="Forms\frmProductDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSubproductDetails.Designer.cs">
-      <DependentUpon>frmSubproductDetails.cs</DependentUpon>
+    <Compile Include="Forms\frmProductDetails.Designer.cs">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmTransaction.cs">
       <SubType>Form</SubType>
@@ -170,14 +170,14 @@
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmProductDetails.resx">
-      <DependentUpon>frmProductDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmCategoryDetails.resx">
+      <DependentUpon>frmCategoryDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReturnMain.resx">
       <DependentUpon>frmReturnMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSubproductDetails.resx">
-      <DependentUpon>frmSubproductDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmProductDetails.resx">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTransaction.resx">
       <DependentUpon>frmTransaction.cs</DependentUpon>

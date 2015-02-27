@@ -42,5 +42,10 @@ namespace ShopProducts.Forms
       {
 
       }
+
+      private void btn_addsubproduct_Click(object sender, EventArgs e)
+      {
+
+      }
     }
 }

@@ -186,7 +186,7 @@ namespace ShopProducts
                     db.RunQuery(Query);
                 }
 
-                frmProductDetails frm = new frmProductDetails();
+                frmCategoryDetails frm = new frmCategoryDetails();
                 frm.Show();
              
             }
@@ -203,7 +203,7 @@ namespace ShopProducts
 
         private void viewProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProductDetails frm = new frmProductDetails();
+            frmCategoryDetails frm = new frmCategoryDetails();
             frm.Show();
         }
 

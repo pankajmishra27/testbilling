@@ -19,10 +19,8 @@ E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe
 E:\TestBilling\testbilling\bin\Debug\ShopProducts.pdb
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Form1.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmSubproductDetails.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomer.resources
 E:\TestBilling\testbilling\bin\Debug\Database1.mdf
 E:\TestBilling\testbilling\bin\Debug\Database1_log.LDF
@@ -34,3 +32,5 @@ E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resou
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Controls.ucFooter.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategory.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmReturnMain.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategoryDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources

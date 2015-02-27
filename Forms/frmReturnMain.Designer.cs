@@ -242,6 +242,7 @@
             this.btn_addsubproduct.TabIndex = 30;
             this.btn_addsubproduct.Text = "Save";
             this.btn_addsubproduct.UseVisualStyleBackColor = true;
+            this.btn_addsubproduct.Click += new System.EventHandler(this.btn_addsubproduct_Click);
             // 
             // combo_productname
             // 
