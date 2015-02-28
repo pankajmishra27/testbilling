@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ShopProducts.DbClasses;
+using System.Threading;
 
 namespace ShopProducts.Forms
 {
@@ -19,7 +20,7 @@ namespace ShopProducts.Forms
             InitializeComponent();
         }
 
-        private void frmCustomerDetails_Load(object sender, EventArgs e)
+        private void GetCustomers()
         {
             try
             {
@@ -54,6 +55,20 @@ namespace ShopProducts.Forms
             {
 
             }
+        }
+
+        private void CallGetCustomer()
+        {
+            lst_customerdetails.Invoke(new MethodInvoker(delegate
+            {
+                GetCustomers();
+            }));
+        }
+
+        private void frmCustomerDetails_Load(object sender, EventArgs e)
+        {
+            Thread thr = new Thread(CallGetCustomer);
+            thr.Start();
         }
 
         private void btn_addcustomer_Click(object sender, EventArgs e)
