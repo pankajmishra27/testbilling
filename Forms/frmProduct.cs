@@ -21,8 +21,21 @@ namespace ShopProducts.Forms
 
         public frmProduct(string P_Id)
         {
-            ProductId = P_Id;
+
             InitializeComponent();
+
+            DBConnection db = new DBConnection();
+            ProductId = P_Id;
+            string Query = "SELECT * FROM tbl_Product WHERE Id =" + ProductId;
+            DataSet ds = db.GetData(Query);
+            DataTable dt = ds.Tables[0];
+
+            //cmbCategory.Text = dt.Rows[0]["ProductName"].ToString(); 
+            txtProductName.Text = dt.Rows[0]["ProductName"].ToString();
+            txtQuantity.Text = dt.Rows[0]["Quantity"].ToString();
+            cmbUnitType.Text = dt.Rows[0]["UnitType"].ToString();
+
+            
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
@@ -41,6 +54,8 @@ namespace ShopProducts.Forms
                 cmbCategory.DataSource = ds.Tables[0];
                 cmbCategory.DisplayMember = "ProductName";
                 cmbCategory.ValueMember = "Id";
+
+                
                 
             }
             catch (Exception ex)

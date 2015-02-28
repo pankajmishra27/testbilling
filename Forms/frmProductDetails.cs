@@ -35,15 +35,10 @@ namespace ShopProducts.Forms
                     try
                     {
                         node = new ListViewItem();
-                        node.Text = dt.Rows[i]["Id"].ToString();
-
-                        //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
+                        node.Text = dt.Rows[i]["Id"].ToString(); 
                         node.SubItems.Add(dt.Rows[i]["CategoryId"].ToString());
                         node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
                         node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
-                        //node.SubItems.Add(dt.Rows[i]["PerItemAmount"].ToString());
-                        //node.SubItems.Add(dt.Rows[i]["UnitType"].ToString());
                         node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
                         lstvwproducts.Items.Add(node);
@@ -96,6 +91,12 @@ namespace ShopProducts.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             string a = string.Empty;
+
+            if (lstvwproducts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Select a Row");
+                return;
+            }
 
             if (lstvwproducts.SelectedItems.Count > 0)
             {

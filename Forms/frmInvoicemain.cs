@@ -16,6 +16,7 @@ namespace ShopProducts.Forms
         int count = 0;
         float taxamt = 0;
         float amt = 0;
+      
         public frmInvoicemain()
         {
             InitializeComponent();
@@ -347,6 +348,8 @@ namespace ShopProducts.Forms
                 amt += float.Parse(txt_amount.Text.Trim());
                 txt_totalamount.Text = amt.ToString();
 
+
+
                 try
                 {
                     DBConnection db = new DBConnection();
@@ -522,18 +525,46 @@ namespace ShopProducts.Forms
                 {
 
                 }
-                if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
+                if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_totaltaxamount.Text.Trim()) || string.IsNullOrEmpty(txt_totalamount.Text.Trim()))
                 {
                     return;
                 }
 
-                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
+                string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_totaltaxamount.Text.Trim() + "','" + txt_totalamount.Text.Trim() + "')";
                 db.RunQuery(Query);
             }
             catch (Exception ex)
             {
 
             }
+
+            //For backup
+
+            //if (string.IsNullOrEmpty(combo_invoicecustomerID.Text) || string.IsNullOrEmpty(txt_invoicenumber.Text.Trim()) || string.IsNullOrEmpty(combo_invoicecustomerName.Text) || string.IsNullOrEmpty(txt_customeraddress.Text.Trim()) || string.IsNullOrEmpty(txt_chequenumber.Text.Trim()) || string.IsNullOrEmpty(txt_bank.Text.Trim()) || string.IsNullOrEmpty(txt_taxamount.Text.Trim()) || string.IsNullOrEmpty(txt_amount.Text.Trim()))
+            //{
+            //    return;
+            //}
+
+            //string Query = "INSERT INTO tbl_InvoiceMain values(" + txt_invoicenumber.Text.Trim() + ",'" + txt_invoicedate.Text.Trim() + "','" + combo_invoicecustomerName.Text + "','" + txt_customeraddress.Text.Trim() + "','" + combo_invoicecustomerID.Text + "','" + txt_chequenumber.Text.Trim() + "','" + txt_bank.Text.Trim() + "','" + txt_chequedate.Text.Trim() + "','" + txt_taxamount.Text.Trim() + "','" + txt_amount.Text.Trim() + "')";
+            //db.RunQuery(Query);
+        }
+
+       
+        private void txt_rate_TextChanged(object sender, EventArgs e)
+        {
+            double val1 = double.Parse(txt_quantity.Text);
+            double val2 = double.Parse(txt_rate.Text);
+            double val3 = val1 * val2;
+            txt_amount.Text = val3.ToString();
+        }
+
+        private void txt_taxpercent_TextChanged(object sender, EventArgs e)
+        {
+            double val1 = double.Parse(txt_amount.Text);
+            double val2 = double.Parse(txt_taxpercent.Text);
+            double val3 = val1 * val2;
+            double val4 = val3 / 100;
+            txt_taxamount.Text = val4.ToString();
         }
     }
 }

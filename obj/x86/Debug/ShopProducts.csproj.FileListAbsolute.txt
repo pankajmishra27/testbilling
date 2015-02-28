@@ -1,36 +1,23 @@
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Form1.resources
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Properties.Resources.resources
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\bin\Debug\DB_Products.mdf
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\bin\Debug\DB_Products_log.ldf
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\bin\Debug\ShopProducts.exe.config
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\bin\Debug\ShopProducts.exe
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\bin\Debug\ShopProducts.pdb
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.exe
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.pdb
-c:\users\resilence\documents\visual studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
-C:\Users\RESILENCE\Documents\Visual Studio 2010\Projects\ShopProducts\ShopProducts\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
-E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe.config
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.exe
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.pdb
 E:\TestBilling\testbilling\bin\Debug\DB_Products.mdf
 E:\TestBilling\testbilling\bin\Debug\DB_Products_log.ldf
-E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe
-E:\TestBilling\testbilling\bin\Debug\ShopProducts.pdb
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Form1.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomer.resources
-E:\TestBilling\testbilling\bin\Debug\Database1.mdf
-E:\TestBilling\testbilling\bin\Debug\Database1_log.LDF
 E:\TestBilling\testbilling\bin\Debug\MyBill.mdf
 E:\TestBilling\testbilling\bin\Debug\MyBill_log.ldf
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe.config
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.exe
+E:\TestBilling\testbilling\bin\Debug\ShopProducts.pdb
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Controls.ucFooter.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Form1.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategory.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomer.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCustomerDetails.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemain.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Controls.ucFooter.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategory.resources
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmReturnMain.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmInvoicemainDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProduct.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmCategoryDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmReturnMain.resources
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmProductDetails.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmTransaction.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resources
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.exe
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.pdb

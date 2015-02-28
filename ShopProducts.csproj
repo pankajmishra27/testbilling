@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -117,6 +120,12 @@
     <Compile Include="Forms\frmInvoicemain.Designer.cs">
       <DependentUpon>frmInvoicemain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmInvoicemainDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInvoicemainDetails.Designer.cs">
+      <DependentUpon>frmInvoicemainDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInvoicemain.resx">
       <DependentUpon>frmInvoicemain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInvoicemainDetails.resx">
+      <DependentUpon>frmInvoicemainDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
@@ -254,13 +266,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.LDF">
-      <DependentUpon>Database1.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="DB_Products.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -292,6 +297,9 @@
   <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="Helper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

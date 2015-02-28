@@ -115,7 +115,6 @@
             this.btn_addtolistview.TabIndex = 34;
             this.btn_addtolistview.Text = "Add";
             this.btn_addtolistview.UseVisualStyleBackColor = true;
-            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
             // 
             // name
             // 
@@ -242,7 +241,6 @@
             this.btn_addsubproduct.TabIndex = 30;
             this.btn_addsubproduct.Text = "Save";
             this.btn_addsubproduct.UseVisualStyleBackColor = true;
-            this.btn_addsubproduct.Click += new System.EventHandler(this.btn_addsubproduct_Click);
             // 
             // combo_productname
             // 

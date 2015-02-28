@@ -409,6 +409,7 @@
             // 
             this.txt_amount.Location = new System.Drawing.Point(775, 42);
             this.txt_amount.Name = "txt_amount";
+            this.txt_amount.ReadOnly = true;
             this.txt_amount.Size = new System.Drawing.Size(100, 21);
             this.txt_amount.TabIndex = 24;
             // 
@@ -489,11 +490,13 @@
             this.txt_rate.Name = "txt_rate";
             this.txt_rate.Size = new System.Drawing.Size(87, 21);
             this.txt_rate.TabIndex = 21;
+            this.txt_rate.TextChanged += new System.EventHandler(this.txt_rate_TextChanged);
             // 
             // txt_taxamount
             // 
             this.txt_taxamount.Location = new System.Drawing.Point(655, 43);
             this.txt_taxamount.Name = "txt_taxamount";
+            this.txt_taxamount.ReadOnly = true;
             this.txt_taxamount.Size = new System.Drawing.Size(100, 21);
             this.txt_taxamount.TabIndex = 23;
             // 
@@ -525,6 +528,7 @@
             this.txt_taxpercent.Name = "txt_taxpercent";
             this.txt_taxpercent.Size = new System.Drawing.Size(85, 21);
             this.txt_taxpercent.TabIndex = 22;
+            this.txt_taxpercent.TextChanged += new System.EventHandler(this.txt_taxpercent_TextChanged);
             // 
             // label13
             // 

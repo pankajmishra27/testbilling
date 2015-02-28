@@ -88,6 +88,12 @@ namespace ShopProducts.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             string a = string.Empty;
+
+            if (lst_customerdetails.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Select a Row");
+                return;
+            }
             if (lst_customerdetails.SelectedItems.Count>0)
             {
                a =  lst_customerdetails.SelectedItems[0].Text;

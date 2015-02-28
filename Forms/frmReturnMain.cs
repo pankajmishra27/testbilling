@@ -19,7 +19,7 @@ namespace ShopProducts.Forms
 
        private void frmReturnMain_Load(object sender, EventArgs e)
         {
-
+           
         }
 
       private void btn_searchinvoice_Click(object sender, EventArgs e)
@@ -37,15 +37,5 @@ namespace ShopProducts.Forms
           txt_invoicedate.Text = dt.Rows[0]["InvoiceDate"].ToString();
           txt_bank.Text = dt.Rows[0]["InvoiceBank"].ToString();
        }
-
-      private void btn_addtolistview_Click(object sender, EventArgs e)
-      {
-
-      }
-
-      private void btn_addsubproduct_Click(object sender, EventArgs e)
-      {
-
-      }
     }
 }

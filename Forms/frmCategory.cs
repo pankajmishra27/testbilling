@@ -14,7 +14,7 @@ namespace ShopProducts.Forms
     public partial class frmCategory : Form
     {
 
-        string ProductId { get; set; }
+        string CategoryId { get; set; } 
 
         public frmCategory()
         {
@@ -62,10 +62,20 @@ namespace ShopProducts.Forms
             }
         }
 
-        public frmCategory(string P_Id)
+        public frmCategory(string C_Id)
         {
-            ProductId = P_Id;
+            
             InitializeComponent();
+            CategoryId = C_Id;
+            DBConnection db = new DBConnection();
+            CategoryId = C_Id;
+            string Query = "SELECT * FROM tbl_ProductCategory WHERE Id =" + CategoryId;
+            DataSet ds = db.GetData(Query);
+            DataTable dt = ds.Tables[0];
+
+            txt_categorycode.Text = dt.Rows[0]["ProductCode"].ToString();
+            txt_categoryname.Text = dt.Rows[0]["ProductName"].ToString();
+            txt_categorydescription.Text = dt.Rows[0]["ProductDescription"].ToString();
         }
 
         private void CopyDatabase()
@@ -118,7 +128,7 @@ namespace ShopProducts.Forms
             try
             {
                 DBConnection db = new DBConnection();
-                if(string.IsNullOrEmpty(ProductId))
+                if (string.IsNullOrEmpty(CategoryId))
                 {
                     try
                     {
@@ -169,7 +179,7 @@ namespace ShopProducts.Forms
                 }
                 else
                 {
-                    string Query = "UPDATE tbl_ProductCategory SET ProductCode = '" + txt_categorycode.Text.Trim() + "', ProductName ='" + txt_categoryname.Text.Trim() + "', ProductDescription = '" + txt_categorydescription.Text.Trim() + "' WHERE Id = " + int.Parse(ProductId);
+                    string Query = "UPDATE tbl_ProductCategory SET ProductCode = '" + txt_categorycode.Text.Trim() + "', ProductName ='" + txt_categoryname.Text.Trim() + "', ProductDescription = '" + txt_categorydescription.Text.Trim() + "' WHERE Id = " + int.Parse(CategoryId);
                     db.RunQuery(Query);
 
                     string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Category Added" + "','" + DateTime.Now + "')";

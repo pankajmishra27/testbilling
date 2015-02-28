@@ -27,8 +27,19 @@ namespace ShopProducts.Forms
 
         public frmCustomer(string C_Id)
         {
-            CustomerId = C_Id;
+            
             InitializeComponent();
+            CustomerId = C_Id;
+            DBConnection db = new DBConnection();
+            CustomerId = C_Id;
+            string Query = "SELECT * FROM tbl_Customer WHERE Id =" + CustomerId;
+            DataSet ds = db.GetData(Query);
+            DataTable dt = ds.Tables[0];
+
+            //cmbCategory.Text = dt.Rows[0]["ProductName"].ToString(); 
+            txtcustomername.Text = dt.Rows[0]["Name"].ToString();
+            txtcustomeraddress.Text = dt.Rows[0]["Address"].ToString();
+            txtcustomercontact.Text = dt.Rows[0]["Contact"].ToString();
         }
 
         private void btn_customerinfo_Click(object sender, EventArgs e)

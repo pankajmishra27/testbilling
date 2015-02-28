@@ -104,6 +104,11 @@ namespace ShopProducts.Forms
         {
             string a = string.Empty;
 
+            if (lstvwProduct.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Select a Row");
+                return;
+            }
             if (lstvwProduct.SelectedItems.Count > 0)
             {
                 a = lstvwProduct.SelectedItems[0].Text;
