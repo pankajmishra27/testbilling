@@ -69,7 +69,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(46, 167);
+            this.label3.Location = new System.Drawing.Point(46, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 15);
             this.label3.TabIndex = 2;
@@ -84,26 +84,31 @@
             // 
             // txt_categoryname
             // 
-            this.txt_categoryname.Location = new System.Drawing.Point(257, 98);
+            this.txt_categoryname.Location = new System.Drawing.Point(257, 97);
             this.txt_categoryname.Name = "txt_categoryname";
             this.txt_categoryname.Size = new System.Drawing.Size(208, 20);
             this.txt_categoryname.TabIndex = 4;
             // 
             // txt_categorydescription
             // 
-            this.txt_categorydescription.Location = new System.Drawing.Point(257, 165);
+            this.txt_categorydescription.Location = new System.Drawing.Point(257, 159);
             this.txt_categorydescription.Name = "txt_categorydescription";
             this.txt_categorydescription.Size = new System.Drawing.Size(208, 20);
             this.txt_categorydescription.TabIndex = 5;
             // 
             // btn_Savecategory
             // 
+            this.btn_Savecategory.BackgroundImage = global::ShopProducts.Properties.Resources._2;
+            this.btn_Savecategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Savecategory.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Savecategory.ForeColor = System.Drawing.Color.Black;
-            this.btn_Savecategory.Location = new System.Drawing.Point(257, 231);
+            this.btn_Savecategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Savecategory.Location = new System.Drawing.Point(257, 209);
             this.btn_Savecategory.Name = "btn_Savecategory";
-            this.btn_Savecategory.Size = new System.Drawing.Size(75, 23);
+            this.btn_Savecategory.Size = new System.Drawing.Size(91, 38);
             this.btn_Savecategory.TabIndex = 6;
             this.btn_Savecategory.Text = "Save";
+            this.btn_Savecategory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Savecategory.UseVisualStyleBackColor = true;
             this.btn_Savecategory.Click += new System.EventHandler(this.btn_Savecategory_Click);
             // 
@@ -118,9 +123,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_categorydescription);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 327);
+            this.groupBox1.Size = new System.Drawing.Size(576, 265);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Category";
