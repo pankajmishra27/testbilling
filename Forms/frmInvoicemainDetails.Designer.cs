@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btn_subproductdetails = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,19 +39,20 @@
             this.invoicedate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.invoicecustomer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.invoiceaddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnsubproduct = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.invoicecustomerid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.invoicechequeno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.invoicecbank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnsubproduct = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Controls.Add(this.btn_subproductdetails);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -66,6 +68,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice Details";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Image = global::ShopProducts.Properties.Resources._2;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(811, 421);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(92, 38);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btn_subproductdetails
             // 
             this.btn_subproductdetails.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -77,7 +95,6 @@
             this.btn_subproductdetails.Size = new System.Drawing.Size(88, 37);
             this.btn_subproductdetails.TabIndex = 8;
             this.btn_subproductdetails.Text = "Delete";
-            this.btn_subproductdetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_subproductdetails.UseVisualStyleBackColor = true;
             this.btn_subproductdetails.Click += new System.EventHandler(this.btn_subproductdetails_Click);
             // 
@@ -149,6 +166,26 @@
             this.invoiceaddress.Text = "Invoice Address";
             this.invoiceaddress.Width = 129;
             // 
+            // invoicecustomerid
+            // 
+            this.invoicecustomerid.Text = "Invoice Customer Id";
+            this.invoicecustomerid.Width = 132;
+            // 
+            // invoicechequeno
+            // 
+            this.invoicechequeno.Text = "Invoice Cheque No";
+            this.invoicechequeno.Width = 124;
+            // 
+            // invoicecbank
+            // 
+            this.invoicecbank.Text = "Invoice Bank";
+            this.invoicecbank.Width = 98;
+            // 
+            // date
+            // 
+            this.date.Text = "Date";
+            this.date.Width = 104;
+            // 
             // btnsubproduct
             // 
             this.btnsubproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,6 +209,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(153, 20);
             this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -180,26 +218,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
             this.dateTimePicker1.TabIndex = 3;
-            // 
-            // invoicecustomerid
-            // 
-            this.invoicecustomerid.Text = "Invoice Customer Id";
-            this.invoicecustomerid.Width = 132;
-            // 
-            // invoicechequeno
-            // 
-            this.invoicechequeno.Text = "Invoice Cheque No";
-            this.invoicechequeno.Width = 124;
-            // 
-            // invoicecbank
-            // 
-            this.invoicecbank.Text = "Invoice Bank";
-            this.invoicecbank.Width = 98;
-            // 
-            // date
-            // 
-            this.date.Text = "Date";
-            this.date.Width = 104;
             // 
             // frmInvoicemainDetails
             // 
@@ -236,6 +254,7 @@
         private System.Windows.Forms.Button btnsubproduct;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnPrint;
 
     }
 }

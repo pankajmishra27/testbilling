@@ -26,22 +26,22 @@ namespace ShopProducts.Forms
             try
             {
                
-                string LocalPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ProductDetails";
+                //string LocalPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ProductDetails";
 
-                if (!Directory.Exists(ApplicationData.FolderLocalApplicationPath))
-                {
-                    Directory.CreateDirectory(ApplicationData.FolderLocalApplicationPath);
-                }
+                //if (!Directory.Exists(ApplicationData.FolderLocalApplicationPath))
+                //{
+                //    Directory.CreateDirectory(ApplicationData.FolderLocalApplicationPath);
+                //}
 
-                // ApplicationData.StartPath = ApplicationData.FolderLocalApplicationPath;
+                //// ApplicationData.StartPath = ApplicationData.FolderLocalApplicationPath;
 
-                if (!Directory.Exists(LocalPath))
-                {
-                    Directory.CreateDirectory(LocalPath);
-                }
+                //if (!Directory.Exists(LocalPath))
+                //{
+                //    Directory.CreateDirectory(LocalPath);
+                //}
 
 
-                CopyDatabase();
+                //CopyDatabase();
                 //DBConnection db = new DBConnection();
                 ////DatabaseHandler.InsertQuery("('" +"qwert" + "zxcvb" + DateTime.Now.ToString() + "')", "tbl_Product");
                 //try
@@ -69,13 +69,11 @@ namespace ShopProducts.Forms
             CategoryId = C_Id;
             DBConnection db = new DBConnection();
             CategoryId = C_Id;
-            string Query = "SELECT * FROM tbl_ProductCategory WHERE Id =" + CategoryId;
+            string Query = "SELECT * FROM tbl_ProductCategory WHERE CategoryId =" + CategoryId;
             DataSet ds = db.GetData(Query);
             DataTable dt = ds.Tables[0];
 
-            txt_categorycode.Text = dt.Rows[0]["ProductCode"].ToString();
-            txt_categoryname.Text = dt.Rows[0]["ProductName"].ToString();
-            txt_categorydescription.Text = dt.Rows[0]["ProductDescription"].ToString();
+            txt_categoryname.Text = dt.Rows[0]["CategoryName"].ToString();
         }
 
         private void CopyDatabase()
@@ -130,20 +128,7 @@ namespace ShopProducts.Forms
                 DBConnection db = new DBConnection();
                 if (string.IsNullOrEmpty(CategoryId))
                 {
-                    try
-                    {
-                        if (string.IsNullOrEmpty(txt_categorycode.Text.Trim())) 
-                        {
-                            txt_categorycode.Text = "Enter Code";
-                        }
-                       
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-                    try
+                   try
                     {
                         if (string.IsNullOrEmpty(txt_categoryname.Text.Trim())) 
                         {
@@ -154,24 +139,13 @@ namespace ShopProducts.Forms
                     {
 
                     }
-                    try
-                    {
-                        if (string.IsNullOrEmpty(txt_categorydescription.Text.Trim())) 
-                        {
-                            txt_categorydescription.Text = "Enter Description";
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-                    if (string.IsNullOrEmpty(txt_categorycode.Text.Trim()) || string.IsNullOrEmpty(txt_categoryname.Text.Trim()) || string.IsNullOrEmpty(txt_categorydescription.Text.Trim()))
+                    
+                    if (string.IsNullOrEmpty(txt_categoryname.Text.Trim()))
                     {
                         return;
                     }
-              
-                    string Query = "INSERT INTO tbl_ProductCategory values(" + txt_categorycode.Text.Trim() + ",'" + txt_categoryname.Text.Trim() + "','" + txt_categorydescription.Text.Trim() + "','" + DateTime.Now + "')";
+
+                    string Query = "INSERT INTO tbl_ProductCategory values('" + txt_categoryname.Text.ToUpper().Trim() + "','"+ DateTime.Now + "')";
                     db.RunQuery(Query);
 
                     string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Category Added" + "','" + DateTime.Now + "')";
@@ -179,20 +153,17 @@ namespace ShopProducts.Forms
                 }
                 else
                 {
-                    string Query = "UPDATE tbl_ProductCategory SET ProductCode = '" + txt_categorycode.Text.Trim() + "', ProductName ='" + txt_categoryname.Text.Trim() + "', ProductDescription = '" + txt_categorydescription.Text.Trim() + "' WHERE Id = " + int.Parse(CategoryId);
+                    string Query = "UPDATE tbl_ProductCategory SET CategoryName = '" + txt_categoryname.Text.ToUpper().Trim() + "' WHERE CategoryId = " + int.Parse(CategoryId);
                     db.RunQuery(Query);
 
                     string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Category Added" + "','" + DateTime.Now + "')";
                     db.RunQuery(Querys);
                 }
 
+                this.Close();
 
-               
-                    
-                
-
-                frmCategoryDetails frm = new frmCategoryDetails();
-                frm.Show();
+                //frmCategoryDetails frm = new frmCategoryDetails();
+                //frm.Show();
 
             }
             catch (Exception ex)
@@ -200,5 +171,7 @@ namespace ShopProducts.Forms
 
             }
         }
+
+        
     }
 }

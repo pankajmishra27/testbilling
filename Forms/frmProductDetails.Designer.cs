@@ -32,7 +32,7 @@
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SubProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -51,7 +51,7 @@
             this.Id,
             this.ProductId,
             this.SubProductName,
-            this.UType,
+            this.quantity,
             this.DateTime});
             this.lstvwproducts.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvwproducts.FullRowSelect = true;
@@ -81,11 +81,11 @@
             this.SubProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SubProductName.Width = 150;
             // 
-            // UType
+            // quantity
             // 
-            this.UType.Text = "Unit Type";
-            this.UType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.UType.Width = 150;
+            this.quantity.Text = "Quantity";
+            this.quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantity.Width = 150;
             // 
             // DateTime
             // 
@@ -107,6 +107,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(153, 23);
             this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // btnsubproduct
             // 
@@ -114,7 +115,7 @@
             this.btnsubproduct.ForeColor = System.Drawing.Color.Black;
             this.btnsubproduct.Image = global::ShopProducts.Properties.Resources._2;
             this.btnsubproduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsubproduct.Location = new System.Drawing.Point(224, 411);
+            this.btnsubproduct.Location = new System.Drawing.Point(467, 412);
             this.btnsubproduct.Name = "btnsubproduct";
             this.btnsubproduct.Size = new System.Drawing.Size(87, 38);
             this.btnsubproduct.TabIndex = 5;
@@ -136,7 +137,7 @@
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Location = new System.Drawing.Point(6, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(783, 455);
             this.groupBox1.TabIndex = 6;
@@ -149,12 +150,11 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::ShopProducts.Properties.Resources._1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(496, 412);
+            this.button1.Location = new System.Drawing.Point(684, 412);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 37);
             this.button1.TabIndex = 9;
             this.button1.Text = "Edit";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -164,12 +164,11 @@
             this.btn_subproductdetails.ForeColor = System.Drawing.Color.Black;
             this.btn_subproductdetails.Image = global::ShopProducts.Properties.Resources._3;
             this.btn_subproductdetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_subproductdetails.Location = new System.Drawing.Point(347, 412);
+            this.btn_subproductdetails.Location = new System.Drawing.Point(575, 412);
             this.btn_subproductdetails.Name = "btn_subproductdetails";
-            this.btn_subproductdetails.Size = new System.Drawing.Size(96, 37);
+            this.btn_subproductdetails.Size = new System.Drawing.Size(100, 37);
             this.btn_subproductdetails.TabIndex = 8;
             this.btn_subproductdetails.Text = "Delete";
-            this.btn_subproductdetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_subproductdetails.UseVisualStyleBackColor = true;
             this.btn_subproductdetails.Click += new System.EventHandler(this.btn_subproductdetails_Click);
             // 
@@ -191,15 +190,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "From";
             // 
-            // frmSubproductDetails
+            // frmProductDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ShopProducts.Properties.Resources.blue_wallpaper_plain;
-            this.ClientSize = new System.Drawing.Size(805, 567);
+            this.ClientSize = new System.Drawing.Size(793, 468);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmSubproductDetails";
+            this.Name = "frmProductDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Product List";
             this.Load += new System.EventHandler(this.frmSubproductDetails_Load);
@@ -215,7 +214,7 @@
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader ProductId;
         private System.Windows.Forms.ColumnHeader SubProductName;
-        private System.Windows.Forms.ColumnHeader UType;
+        private System.Windows.Forms.ColumnHeader quantity;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnsubproduct;

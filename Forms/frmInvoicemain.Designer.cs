@@ -33,8 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_customerid = new System.Windows.Forms.TextBox();
-            this.txt_customername = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_bank = new System.Windows.Forms.TextBox();
             this.txt_chequenumber = new System.Windows.Forms.TextBox();
@@ -145,22 +143,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Invoice Date";
             // 
-            // txt_customerid
-            // 
-            this.txt_customerid.Location = new System.Drawing.Point(457, 15);
-            this.txt_customerid.Name = "txt_customerid";
-            this.txt_customerid.Size = new System.Drawing.Size(162, 21);
-            this.txt_customerid.TabIndex = 5;
-            this.txt_customerid.Visible = false;
-            // 
-            // txt_customername
-            // 
-            this.txt_customername.Location = new System.Drawing.Point(457, 56);
-            this.txt_customername.Name = "txt_customername";
-            this.txt_customername.Size = new System.Drawing.Size(162, 21);
-            this.txt_customername.TabIndex = 6;
-            this.txt_customername.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = global::ShopProducts.Properties.Resources.background;
@@ -245,17 +227,15 @@
             this.groupBox2.Controls.Add(this.txt_invoicenumber);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_customerid);
-            this.groupBox2.Controls.Add(this.txt_customername);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(2, 0);
+            this.groupBox2.Location = new System.Drawing.Point(3, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1060, 518);
+            this.groupBox2.Size = new System.Drawing.Size(1059, 518);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Invoice";
@@ -601,6 +581,7 @@
             // 
             // txt_invoicenumber
             // 
+            this.txt_invoicenumber.Enabled = false;
             this.txt_invoicenumber.Location = new System.Drawing.Point(905, 21);
             this.txt_invoicenumber.Name = "txt_invoicenumber";
             this.txt_invoicenumber.Size = new System.Drawing.Size(136, 21);
@@ -632,8 +613,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_customerid;
-        private System.Windows.Forms.TextBox txt_customername;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_bank;
         private System.Windows.Forms.TextBox txt_chequenumber;

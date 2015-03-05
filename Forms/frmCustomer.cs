@@ -22,7 +22,7 @@ namespace ShopProducts.Forms
      
         private void frmCustomer_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
         public frmCustomer(string C_Id)
@@ -36,7 +36,6 @@ namespace ShopProducts.Forms
             DataSet ds = db.GetData(Query);
             DataTable dt = ds.Tables[0];
 
-            //cmbCategory.Text = dt.Rows[0]["ProductName"].ToString(); 
             txtcustomername.Text = dt.Rows[0]["Name"].ToString();
             txtcustomeraddress.Text = dt.Rows[0]["Address"].ToString();
             txtcustomercontact.Text = dt.Rows[0]["Contact"].ToString();
@@ -57,7 +56,7 @@ namespace ShopProducts.Forms
                         return;
                     }
 
-                    string Query = "INSERT INTO tbl_Customer values('" + txtcustomername.Text.Trim() + "','" + txtcustomeraddress.Text.Trim() + "','" + txtcustomercontact.Text.Trim() + "','" + DateTime.Now + "')";
+                    string Query = "INSERT INTO tbl_Customer values('" + txtcustomername.Text.ToUpper().Trim() + "','" + txtcustomeraddress.Text.ToUpper().Trim() + "','" + txtcustomercontact.Text.ToUpper().Trim() + "','" + DateTime.Now + "')";
                     db.RunQuery(Query);
 
                     lblErrorMessage.Text = "Record Added Successfully.";
@@ -65,19 +64,17 @@ namespace ShopProducts.Forms
                 }
                 else
                 {
-                    string Query = "UPDATE tbl_Customer SET Name = '" + txtcustomername.Text.Trim() + "', Address ='" + txtcustomeraddress.Text.Trim() + "', Contact = '" + txtcustomercontact.Text.Trim() + "' WHERE Id = " + int.Parse(CustomerId);
+                    string Query = "UPDATE tbl_Customer SET Name = '" + txtcustomername.Text.ToUpper().Trim() + "', Address ='" + txtcustomeraddress.Text.ToUpper().Trim() + "', Contact = '" + txtcustomercontact.Text.ToUpper().Trim() + "' WHERE Id = " + int.Parse(CustomerId);
                     db.RunQuery(Query);
  
                 }
+
+                this.Close();
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblErrorMessage.Text = "Record Not Added.";
             }
-
-            frmCustomerDetails frm = new frmCustomerDetails();
-            frm.Show();
         }
 
         private void ClearAllTextboxes(Control CC)

@@ -21,3 +21,9 @@ E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Properties.Resources.resou
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csproj.GenerateResource.Cache
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.exe
 E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.pdb
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmReportShow.resources
+E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.ReportSource.dll
+E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.Shared.dll
+E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.Windows.Forms.dll
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csprojResolveAssemblyReference.cache

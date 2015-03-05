@@ -20,6 +20,8 @@ namespace ShopProducts.Forms
             InitializeComponent();
         }
 
+
+
         private void GetCustomers()
         {
             try
@@ -29,6 +31,7 @@ namespace ShopProducts.Forms
                 DataTable dt = ds.Tables[0];
 
                 ListViewItem node;
+                lst_customerdetails.Items.Clear();
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -67,37 +70,54 @@ namespace ShopProducts.Forms
 
         private void frmCustomerDetails_Load(object sender, EventArgs e)
         {
-            Thread thr = new Thread(CallGetCustomer);
-            thr.Start();
+            //Thread thr = new Thread(CallGetCustomer);
+            //thr.Start();
+            GetCustomers();
         }
 
         private void btn_addcustomer_Click(object sender, EventArgs e)
         {
             frmCustomer frm = new frmCustomer();
-            frm.Show();
+            frm.ShowDialog();
+            GetCustomers();
         }
 
         private void btn_deletecustomerdetails_Click(object sender, EventArgs e)
         {
-            DBConnection db = new DBConnection();
-            string id = string.Empty;
-
-            if(!string.IsNullOrEmpty(lst_customerdetails.FocusedItem.SubItems[0].Text))
-            {            
-                 id = lst_customerdetails.FocusedItem.SubItems[0].Text;
-            }
-            else
+            try
             {
-                string msg = "Please select a row.";
+                string a = string.Empty;
+
+                if (lst_customerdetails.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Please Select a Row");
+                    return;
+                }
+
+                DBConnection db = new DBConnection();
+                string id = string.Empty;
+
+                if (!string.IsNullOrEmpty(lst_customerdetails.FocusedItem.SubItems[0].Text))
+                {
+                    id = lst_customerdetails.FocusedItem.SubItems[0].Text;
+                }
+                else
+                {
+                    string msg = "Please select a row.";
+                }
+
+
+                string Query = "DELETE FROM tbl_Customer WHERE Id =" + int.Parse(id);
+                db.RunQuery(Query);
+
+                //frmCustomerDetails frm = new frmCustomerDetails();
+                //frm.ShowDialog();
+                GetCustomers();
             }
+            catch (Exception)
+            {
 
-
-            string Query = "DELETE FROM tbl_Customer WHERE Id =" + int.Parse(id);
-            db.RunQuery(Query);
-
-            frmCustomerDetails frm = new frmCustomerDetails();
-            frm.Show();
-            
+            }    
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,7 +135,8 @@ namespace ShopProducts.Forms
             }
 
             frmCustomer editcustomer = new frmCustomer(a);
-            editcustomer.Show();
+            editcustomer.ShowDialog();
+            GetCustomers();
         }
     }
 }

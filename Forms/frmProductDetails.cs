@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ShopProducts.DbClasses;
+using System.Data.SqlClient;
 
 namespace ShopProducts.Forms
 {
@@ -20,7 +21,7 @@ namespace ShopProducts.Forms
             InitializeComponent();
         }
 
-        private void frmSubproductDetails_Load(object sender, EventArgs e)
+        private void loadform()
         {
             try
             {
@@ -29,13 +30,14 @@ namespace ShopProducts.Forms
                 DataTable dt = ds.Tables[0];
 
                 ListViewItem node;
+                lstvwproducts.Items.Clear();
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     try
                     {
                         node = new ListViewItem();
-                        node.Text = dt.Rows[i]["Id"].ToString(); 
+                        node.Text = dt.Rows[i]["Id"].ToString();
                         node.SubItems.Add(dt.Rows[i]["CategoryId"].ToString());
                         node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
                         node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
@@ -51,6 +53,19 @@ namespace ShopProducts.Forms
             }
             catch (Exception ex)
             {
+                
+            }
+        }
+
+
+        private void frmSubproductDetails_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                loadform();
+            }
+            catch (Exception ex)
+            {
 
             }
         }
@@ -58,7 +73,8 @@ namespace ShopProducts.Forms
         private void btnsubproduct_Click(object sender, EventArgs e)
         {
             frmProduct frm = new frmProduct();
-            frm.Show();
+            frm.ShowDialog();
+            loadform();
         }
 
         private void lstvwsubproducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +84,14 @@ namespace ShopProducts.Forms
 
         private void btn_subproductdetails_Click(object sender, EventArgs e)
         {
+
+            string a = string.Empty;
+
+            if (lstvwproducts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Select a Row");
+                return;
+            }
             DBConnection db = new DBConnection();
             string id = string.Empty;
 
@@ -84,8 +108,10 @@ namespace ShopProducts.Forms
             string Query = "DELETE FROM tbl_Product WHERE Id =" + int.Parse(id);
             db.RunQuery(Query);
 
-            frmProductDetails frm = new frmProductDetails();
-            frm.Show();
+            //frmProductDetails frm = new frmProductDetails();
+            //frm.Show();
+            loadform();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,7 +130,48 @@ namespace ShopProducts.Forms
             }
 
             frmProduct editproduct = new frmProduct(a);
-            editproduct.Show();
+            editproduct.ShowDialog();
+            loadform();
+                        
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnection db = new DBConnection();
+                string query = "SELECT * FROM tbl_Product WHERE Date Between '" + dateTimePicker1.Value.Date + "' AND '" + dateTimePicker2.Value.AddDays(1).AddSeconds(-1).Date + "'";
+                //string query = "SELECT * FROM tbl_Product WHERE Date >= '" + dateTimePicker1.Value.Date + "' AND  Date <= '" + dateTimePicker2.Value.Date + "'";
+                DataSet d = db.GetData(query);
+
+                DataTable dt = d.Tables[0];
+
+                ListViewItem node;
+                lstvwproducts.Items.Clear();
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    try
+                    {
+                        node = new ListViewItem();
+                        node.Text = dt.Rows[i]["Id"].ToString();
+                        node.SubItems.Add(dt.Rows[i]["CategoryId"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["Quantity"].ToString());
+                        node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
+
+                        lstvwproducts.Items.Add(node);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }   
         }
     }
 }

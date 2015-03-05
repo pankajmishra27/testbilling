@@ -92,10 +92,11 @@
             // 
             // btn_addcustomer
             // 
+            this.btn_addcustomer.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addcustomer.ForeColor = System.Drawing.Color.Black;
             this.btn_addcustomer.Image = global::ShopProducts.Properties.Resources._2;
             this.btn_addcustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_addcustomer.Location = new System.Drawing.Point(245, 430);
+            this.btn_addcustomer.Location = new System.Drawing.Point(592, 430);
             this.btn_addcustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addcustomer.Name = "btn_addcustomer";
             this.btn_addcustomer.Size = new System.Drawing.Size(98, 39);
@@ -114,7 +115,7 @@
             this.groupBox1.Controls.Add(this.lst_customerdetails);
             this.groupBox1.Controls.Add(this.btn_addcustomer);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 57);
+            this.groupBox1.Location = new System.Drawing.Point(8, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(907, 474);
             this.groupBox1.TabIndex = 2;
@@ -123,29 +124,29 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::ShopProducts.Properties.Resources._1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(554, 430);
+            this.button1.Location = new System.Drawing.Point(808, 429);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 38);
+            this.button1.Size = new System.Drawing.Size(91, 38);
             this.button1.TabIndex = 3;
             this.button1.Text = "Edit";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_deletecustomerdetails
             // 
+            this.btn_deletecustomerdetails.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deletecustomerdetails.ForeColor = System.Drawing.Color.Black;
             this.btn_deletecustomerdetails.Image = global::ShopProducts.Properties.Resources._3;
             this.btn_deletecustomerdetails.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_deletecustomerdetails.Location = new System.Drawing.Point(396, 431);
+            this.btn_deletecustomerdetails.Location = new System.Drawing.Point(697, 429);
             this.btn_deletecustomerdetails.Name = "btn_deletecustomerdetails";
-            this.btn_deletecustomerdetails.Size = new System.Drawing.Size(98, 38);
+            this.btn_deletecustomerdetails.Size = new System.Drawing.Size(105, 38);
             this.btn_deletecustomerdetails.TabIndex = 2;
             this.btn_deletecustomerdetails.Text = "Delete";
-            this.btn_deletecustomerdetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_deletecustomerdetails.UseVisualStyleBackColor = true;
             this.btn_deletecustomerdetails.Click += new System.EventHandler(this.btn_deletecustomerdetails_Click);
             // 
@@ -154,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ShopProducts.Properties.Resources.blue_wallpaper_plain;
-            this.ClientSize = new System.Drawing.Size(931, 574);
+            this.ClientSize = new System.Drawing.Size(919, 487);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

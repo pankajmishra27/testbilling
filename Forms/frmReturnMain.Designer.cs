@@ -77,6 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_editReturn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -179,6 +180,7 @@
             // groupBox3
             // 
             this.groupBox3.BackgroundImage = global::ShopProducts.Properties.Resources.background;
+            this.groupBox3.Controls.Add(this.btn_editReturn);
             this.groupBox3.Controls.Add(this.btn_deletetolistview);
             this.groupBox3.Controls.Add(this.btn_addtolistview);
             this.groupBox3.Controls.Add(this.txt_totalamount);
@@ -567,6 +569,18 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Invoice Date";
             // 
+            // btn_editReturn
+            // 
+            this.btn_editReturn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editReturn.ForeColor = System.Drawing.Color.Black;
+            this.btn_editReturn.Location = new System.Drawing.Point(663, 296);
+            this.btn_editReturn.Name = "btn_editReturn";
+            this.btn_editReturn.Size = new System.Drawing.Size(75, 23);
+            this.btn_editReturn.TabIndex = 36;
+            this.btn_editReturn.Text = "Edit";
+            this.btn_editReturn.UseVisualStyleBackColor = true;
+            this.btn_editReturn.Click += new System.EventHandler(this.btn_editReturn_Click);
+            // 
             // frmReturnMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +652,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_searchinvoice;
+        private System.Windows.Forms.Button btn_editReturn;
 
     }
 }

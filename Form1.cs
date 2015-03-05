@@ -231,36 +231,80 @@ namespace ShopProducts
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProductDetails frmPro = new frmProductDetails();
-            frmPro.Show();
+            try
+            {
+                frmProductDetails frmPro = new frmProductDetails();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+              
+            }
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProduct frmPro = new frmProduct();
-            frmPro.Show();
+            try
+            {
+                frmProduct frmPro = new frmProduct();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+            
+            }  
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCategory frmPro = new frmCategory();
-            frmPro.Show();
+            try
+            {
+                frmCategory frmPro = new frmCategory();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                frmCategoryDetails frmpro = new frmCategoryDetails();
+                frmpro.Show();
+            }
+            catch (Exception ex)
+            {
+              
+            }
         }
 
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmInvoicemain frmPro = new frmInvoicemain();
-            frmPro.Show();
+            try
+            {
+                frmInvoicemain frmPro = new frmInvoicemain();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+              
+            }  
         }
 
         private void viewToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                frmInvoicemainDetails frmpro = new frmInvoicemainDetails();
+                frmpro.Show();
+            }
+            catch (Exception ex)
+            {
+             
+            }    
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -270,14 +314,28 @@ namespace ShopProducts
 
         private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomer frmPro = new frmCustomer();
-            frmPro.Show();
+            try
+            {
+                frmCustomer frmPro = new frmCustomer();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void createCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomerDetails frmPro = new frmCustomerDetails();
-            frmPro.Show();
+            try
+            {
+                frmCustomerDetails frmPro = new frmCustomerDetails();
+                frmPro.Show();
+            }
+            catch (Exception ex)
+            {
+                
+            } 
         }
     }
 }

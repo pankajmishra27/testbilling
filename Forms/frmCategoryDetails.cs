@@ -21,7 +21,8 @@ namespace ShopProducts.Forms
             InitializeComponent();
         }
 
-        private void frmProductDetails_Load(object sender, EventArgs e)
+
+        private void LoadForm()
         {
             try
             {
@@ -31,17 +32,15 @@ namespace ShopProducts.Forms
 
                 ListViewItem node;
 
+                lstvwProduct.Items.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     try
                     {
                         node = new ListViewItem();
-                        node.Text = dt.Rows[i]["Id"].ToString();
+                        node.Text = dt.Rows[i]["CategoryId"].ToString();
 
-                        //node.SubItems.Add(dt.Rows[i]["Id"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductCode"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductName"].ToString());
-                        node.SubItems.Add(dt.Rows[i]["ProductDescription"].ToString());
+                        node.SubItems.Add(dt.Rows[i]["CategoryName"].ToString());
                         node.SubItems.Add(Convert.ToDateTime(dt.Rows[i]["Date"].ToString()).ToString("dd-MMM-yyyy"));
 
                         lstvwProduct.Items.Add(node);
@@ -51,6 +50,18 @@ namespace ShopProducts.Forms
                         
                     }
                 }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void frmProductDetails_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadForm();
             }
             catch (Exception ex)
             {
@@ -62,7 +73,8 @@ namespace ShopProducts.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             frmCategory frm = new frmCategory();
-            frm.Show();
+            frm.ShowDialog();
+            LoadForm();
         }
 
         private void lst_Invoicemain_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,8 +86,18 @@ namespace ShopProducts.Forms
         {
             try
             {
+
+                string a = string.Empty;
+
+                if (lstvwProduct.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Please Select a Row");
+                    return;
+                }
+
+
                  DBConnection db = new DBConnection();
-            string id = string.Empty;
+                  string id = string.Empty;
 
             if(!string.IsNullOrEmpty(lstvwProduct.FocusedItem.SubItems[0].Text))
             {            
@@ -86,11 +108,12 @@ namespace ShopProducts.Forms
                 string msg = "Please select a row.";
             }
 
-            string Query = "DELETE FROM tbl_ProductCategory WHERE Id =" + int.Parse(id);
+            string Query = "DELETE FROM tbl_ProductCategory WHERE CategoryId =" + int.Parse(id);
             db.RunQuery(Query);
 
             frmCategoryDetails frm = new frmCategoryDetails();
-            frm.Show();
+            frm.ShowDialog();
+            LoadForm();
 
             }
             catch (Exception ex)
@@ -115,7 +138,9 @@ namespace ShopProducts.Forms
             }
 
             frmCategory editproduct = new frmCategory(a);
-            editproduct.Show();
+            editproduct.ShowDialog();
+            LoadForm();
+            
         }
     }
 }

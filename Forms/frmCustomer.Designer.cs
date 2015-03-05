@@ -35,8 +35,8 @@
             this.txtcustomeraddress = new System.Windows.Forms.TextBox();
             this.txtcustomercontact = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_customerinfo = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.btn_customerinfo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,22 +123,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
             // 
-            // btn_customerinfo
-            // 
-            this.btn_customerinfo.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_customerinfo.ForeColor = System.Drawing.Color.Black;
-            this.btn_customerinfo.Image = global::ShopProducts.Properties.Resources._1;
-            this.btn_customerinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customerinfo.Location = new System.Drawing.Point(152, 128);
-            this.btn_customerinfo.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_customerinfo.Name = "btn_customerinfo";
-            this.btn_customerinfo.Size = new System.Drawing.Size(112, 39);
-            this.btn_customerinfo.TabIndex = 6;
-            this.btn_customerinfo.Text = "Save";
-            this.btn_customerinfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_customerinfo.UseVisualStyleBackColor = true;
-            this.btn_customerinfo.Click += new System.EventHandler(this.btn_customerinfo_Click);
-            // 
             // lblErrorMessage
             // 
             this.lblErrorMessage.AutoSize = true;
@@ -150,6 +134,22 @@
             this.lblErrorMessage.Name = "lblErrorMessage";
             this.lblErrorMessage.Size = new System.Drawing.Size(0, 16);
             this.lblErrorMessage.TabIndex = 7;
+            // 
+            // btn_customerinfo
+            // 
+            this.btn_customerinfo.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customerinfo.ForeColor = System.Drawing.Color.Black;
+            this.btn_customerinfo.Image = global::ShopProducts.Properties.Resources._1;
+            this.btn_customerinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_customerinfo.Location = new System.Drawing.Point(152, 128);
+            this.btn_customerinfo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_customerinfo.Name = "btn_customerinfo";
+            this.btn_customerinfo.Size = new System.Drawing.Size(80, 39);
+            this.btn_customerinfo.TabIndex = 6;
+            this.btn_customerinfo.Text = "Save";
+            this.btn_customerinfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_customerinfo.UseVisualStyleBackColor = true;
+            this.btn_customerinfo.Click += new System.EventHandler(this.btn_customerinfo_Click);
             // 
             // frmCustomer
             // 

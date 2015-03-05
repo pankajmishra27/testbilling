@@ -30,7 +30,6 @@ namespace ShopProducts.Forms
             DataSet ds = db.GetData(Query);
             DataTable dt = ds.Tables[0];
 
-            //cmbCategory.Text = dt.Rows[0]["ProductName"].ToString(); 
             txtProductName.Text = dt.Rows[0]["ProductName"].ToString();
             txtQuantity.Text = dt.Rows[0]["Quantity"].ToString();
             cmbUnitType.Text = dt.Rows[0]["UnitType"].ToString();
@@ -52,11 +51,8 @@ namespace ShopProducts.Forms
                 DataSet ds = db.GetData(Query);
 
                 cmbCategory.DataSource = ds.Tables[0];
-                cmbCategory.DisplayMember = "ProductName";
-                cmbCategory.ValueMember = "Id";
-
-                
-                
+                cmbCategory.DisplayMember = "CategoryName";
+                cmbCategory.ValueMember = "CategoryId";         
             }
             catch (Exception ex)
             {
@@ -86,7 +82,7 @@ namespace ShopProducts.Forms
                         return;
                     }
 
-                    string Query = "INSERT INTO tbl_Product(CategoryId,ProductName,Quantity,UnitType,Date) values('" + cmbCategory.SelectedValue + "','" + txtProductName.Text.Trim() + "','" + txtQuantity.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
+                    string Query = "INSERT INTO tbl_Product(CategoryId,ProductName,Quantity,UnitType,Date) values('" + cmbCategory.SelectedValue + "','" + txtProductName.Text.ToUpper().Trim() + "','" + txtQuantity.Text.Trim() + "','" + cmbUnitType.SelectedItem + "','" + DateTime.Now + "')";
                     db.RunQuery(Query);
 
                     string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Added" + "','" + DateTime.Now + "')";
@@ -95,15 +91,17 @@ namespace ShopProducts.Forms
 
                 else
                 {
-                    string Query = "UPDATE tbl_Product SET CategoryId = '" + cmbCategory.SelectedValue + "', ProductName ='" + txtProductName.Text.Trim() + "', Quantity = '" + txtQuantity.Text.Trim() + "', UnitType = '" + cmbUnitType.SelectedItem + "', Date = '" + DateTime.Now + "' WHERE Id = " + int.Parse(ProductId);
+                    string Query = "UPDATE tbl_Product SET CategoryId = '" + cmbCategory.SelectedValue + "', ProductName ='" + txtProductName.Text.ToUpper().Trim() + "', Quantity = '" + txtQuantity.Text.Trim() + "', UnitType = '" + cmbUnitType.SelectedItem + "', Date = '" + DateTime.Now + "' WHERE Id = " + int.Parse(ProductId);
                     db.RunQuery(Query);
 
                     string Querys = "INSERT INTO tbl_Transaction(TransStatus,Date) VALUES('" + "Product Added" + "','" + DateTime.Now + "')";
                     db.RunQuery(Querys);
                 }
 
-                frmProductDetails frm = new frmProductDetails();
-                frm.Show();
+                this.Close();
+
+                //frmProductDetails frm = new frmProductDetails();
+                //frm.Show();
             }
             catch (Exception ex)
             {

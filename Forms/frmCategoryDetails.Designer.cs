@@ -30,9 +30,7 @@
         {
             this.lstvwProduct = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CategoryCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CategoryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CategoryDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_viewproduct = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,16 +43,14 @@
             // 
             this.lstvwProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,
-            this.CategoryCode,
             this.CategoryName,
-            this.CategoryDescription,
             this.Date});
             this.lstvwProduct.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvwProduct.FullRowSelect = true;
             this.lstvwProduct.GridLines = true;
             this.lstvwProduct.Location = new System.Drawing.Point(6, 22);
             this.lstvwProduct.Name = "lstvwProduct";
-            this.lstvwProduct.Size = new System.Drawing.Size(858, 289);
+            this.lstvwProduct.Size = new System.Drawing.Size(504, 289);
             this.lstvwProduct.TabIndex = 0;
             this.lstvwProduct.UseCompatibleStateImageBehavior = false;
             this.lstvwProduct.View = System.Windows.Forms.View.Details;
@@ -64,23 +60,11 @@
             this.id.Text = "Category Id";
             this.id.Width = 150;
             // 
-            // CategoryCode
-            // 
-            this.CategoryCode.Text = "Category Code";
-            this.CategoryCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CategoryCode.Width = 150;
-            // 
             // CategoryName
             // 
             this.CategoryName.Text = "Category Name";
             this.CategoryName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CategoryName.Width = 200;
-            // 
-            // CategoryDescription
-            // 
-            this.CategoryDescription.Text = "Category Description";
-            this.CategoryDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CategoryDescription.Width = 200;
             // 
             // Date
             // 
@@ -95,9 +79,9 @@
             this.btn_viewproduct.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_viewproduct.ForeColor = System.Drawing.Color.Black;
             this.btn_viewproduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_viewproduct.Location = new System.Drawing.Point(253, 317);
+            this.btn_viewproduct.Location = new System.Drawing.Point(209, 317);
             this.btn_viewproduct.Name = "btn_viewproduct";
-            this.btn_viewproduct.Size = new System.Drawing.Size(109, 38);
+            this.btn_viewproduct.Size = new System.Drawing.Size(91, 37);
             this.btn_viewproduct.TabIndex = 1;
             this.btn_viewproduct.Text = "Add";
             this.btn_viewproduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -112,9 +96,9 @@
             this.groupBox1.Controls.Add(this.lstvwProduct);
             this.groupBox1.Controls.Add(this.btn_viewproduct);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
+            this.groupBox1.Location = new System.Drawing.Point(12, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(872, 360);
+            this.groupBox1.Size = new System.Drawing.Size(519, 360);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Category List";
@@ -125,7 +109,7 @@
             this.btn_editproducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_editproducts.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editproducts.ForeColor = System.Drawing.Color.Black;
-            this.btn_editproducts.Location = new System.Drawing.Point(547, 317);
+            this.btn_editproducts.Location = new System.Drawing.Point(416, 319);
             this.btn_editproducts.Name = "btn_editproducts";
             this.btn_editproducts.Size = new System.Drawing.Size(94, 37);
             this.btn_editproducts.TabIndex = 3;
@@ -139,7 +123,7 @@
             this.btn_deleteproduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_deleteproduct.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deleteproduct.ForeColor = System.Drawing.Color.Black;
-            this.btn_deleteproduct.Location = new System.Drawing.Point(398, 318);
+            this.btn_deleteproduct.Location = new System.Drawing.Point(306, 318);
             this.btn_deleteproduct.Name = "btn_deleteproduct";
             this.btn_deleteproduct.Size = new System.Drawing.Size(104, 36);
             this.btn_deleteproduct.TabIndex = 2;
@@ -152,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ShopProducts.Properties.Resources.blue_wallpaper_plain;
-            this.ClientSize = new System.Drawing.Size(891, 439);
+            this.ClientSize = new System.Drawing.Size(543, 405);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
@@ -171,9 +155,7 @@
         private System.Windows.Forms.ListView lstvwProduct;
         private System.Windows.Forms.Button btn_viewproduct;
         private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader CategoryCode;
         private System.Windows.Forms.ColumnHeader CategoryName;
-        private System.Windows.Forms.ColumnHeader CategoryDescription;
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_editproducts;
