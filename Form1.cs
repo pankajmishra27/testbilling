@@ -337,5 +337,11 @@ namespace ShopProducts
                 
             } 
         }
+
+        private void searchInvoiceDeatailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReturnMain frm = new frmReturnMain();
+            frm.Show();
+        }
     }
 }

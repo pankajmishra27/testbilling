@@ -116,6 +116,7 @@
             this.btn_addtolistview.TabIndex = 34;
             this.btn_addtolistview.Text = "Add";
             this.btn_addtolistview.UseVisualStyleBackColor = true;
+            this.btn_addtolistview.Click += new System.EventHandler(this.btn_addtolistview_Click);
             // 
             // name
             // 
@@ -214,6 +215,7 @@
             // 
             this.txt_totalamount.Location = new System.Drawing.Point(888, 263);
             this.txt_totalamount.Name = "txt_totalamount";
+            this.txt_totalamount.ReadOnly = true;
             this.txt_totalamount.Size = new System.Drawing.Size(136, 21);
             this.txt_totalamount.TabIndex = 33;
             // 
@@ -221,13 +223,14 @@
             // 
             this.txt_totaltaxamount.Location = new System.Drawing.Point(732, 262);
             this.txt_totaltaxamount.Name = "txt_totaltaxamount";
+            this.txt_totaltaxamount.ReadOnly = true;
             this.txt_totaltaxamount.Size = new System.Drawing.Size(140, 21);
             this.txt_totaltaxamount.TabIndex = 32;
             // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(895, 297);
+            this.button1.Location = new System.Drawing.Point(944, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 31;
@@ -237,12 +240,13 @@
             // btn_addsubproduct
             // 
             this.btn_addsubproduct.ForeColor = System.Drawing.Color.Black;
-            this.btn_addsubproduct.Location = new System.Drawing.Point(800, 297);
+            this.btn_addsubproduct.Location = new System.Drawing.Point(850, 297);
             this.btn_addsubproduct.Name = "btn_addsubproduct";
             this.btn_addsubproduct.Size = new System.Drawing.Size(75, 23);
             this.btn_addsubproduct.TabIndex = 30;
             this.btn_addsubproduct.Text = "Save";
             this.btn_addsubproduct.UseVisualStyleBackColor = true;
+            this.btn_addsubproduct.Click += new System.EventHandler(this.btn_addsubproduct_Click);
             // 
             // combo_productname
             // 
@@ -304,6 +308,7 @@
             // 
             this.txt_amount.Location = new System.Drawing.Point(775, 42);
             this.txt_amount.Name = "txt_amount";
+            this.txt_amount.ReadOnly = true;
             this.txt_amount.Size = new System.Drawing.Size(100, 21);
             this.txt_amount.TabIndex = 24;
             // 
@@ -343,6 +348,7 @@
             // 
             this.txt_rate.Location = new System.Drawing.Point(415, 42);
             this.txt_rate.Name = "txt_rate";
+            this.txt_rate.ReadOnly = true;
             this.txt_rate.Size = new System.Drawing.Size(87, 21);
             this.txt_rate.TabIndex = 21;
             // 
@@ -350,6 +356,7 @@
             // 
             this.txt_taxamount.Location = new System.Drawing.Point(655, 43);
             this.txt_taxamount.Name = "txt_taxamount";
+            this.txt_taxamount.ReadOnly = true;
             this.txt_taxamount.Size = new System.Drawing.Size(100, 21);
             this.txt_taxamount.TabIndex = 23;
             // 
@@ -379,6 +386,7 @@
             // 
             this.txt_taxpercent.Location = new System.Drawing.Point(539, 42);
             this.txt_taxpercent.Name = "txt_taxpercent";
+            this.txt_taxpercent.ReadOnly = true;
             this.txt_taxpercent.Size = new System.Drawing.Size(85, 21);
             this.txt_taxpercent.TabIndex = 22;
             // 
@@ -573,7 +581,7 @@
             // 
             this.btn_editReturn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editReturn.ForeColor = System.Drawing.Color.Black;
-            this.btn_editReturn.Location = new System.Drawing.Point(663, 296);
+            this.btn_editReturn.Location = new System.Drawing.Point(758, 296);
             this.btn_editReturn.Name = "btn_editReturn";
             this.btn_editReturn.Size = new System.Drawing.Size(75, 23);
             this.btn_editReturn.TabIndex = 36;

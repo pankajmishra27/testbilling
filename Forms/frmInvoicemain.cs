@@ -595,7 +595,7 @@ namespace ShopProducts.Forms
                         string PrQty = this.lst_Invoicemain.Items[i].SubItems[3].Text;
                         string PrRate = this.lst_Invoicemain.Items[i].SubItems[4].Text;
                         string PrTaxPer = this.lst_Invoicemain.Items[i].SubItems[5].Text;
-                        string SubQuery = "insert into tbl_InvoiceSub(InvId,PrId,PrQty,PrRate,PrTaxPercent) values('" + Rowid + "','" + combo_description.Text + "','" + PrQty + "','" + PrRate + "','" + PrTaxPer + "')";
+                        string SubQuery = "insert into tbl_InvoiceSub(InvId,PrId,PrQty,PrRate,PrTaxPercent) values('" + Rowid + "','" + this.lst_Invoicemain.Items[i].SubItems[2].Text + "','" + PrQty + "','" + PrRate + "','" + PrTaxPer + "')";
                         db.RunQuery(SubQuery);
 
 
@@ -624,19 +624,25 @@ namespace ShopProducts.Forms
        
         private void txt_rate_TextChanged(object sender, EventArgs e)
         {
-            double val1 = double.Parse(txt_quantity.Text);
-            double val2 = double.Parse(txt_rate.Text);
-            double val3 = val1 * val2;
-            txt_amount.Text = val3.ToString();
+            if (!string.IsNullOrEmpty(txt_rate.Text))
+            {
+                double val1 = double.Parse(txt_quantity.Text);
+                double val2 = double.Parse(txt_rate.Text);
+                double val3 = val1 * val2;
+                txt_amount.Text = val3.ToString();
+            }
         }
 
         private void txt_taxpercent_TextChanged(object sender, EventArgs e)
         {
-            double val1 = double.Parse(txt_amount.Text);
-            double val2 = double.Parse(txt_taxpercent.Text);
-            double val3 = val1 * val2;
-            double val4 = val3 / 100;
-            txt_taxamount.Text = val4.ToString();
+            if (!string.IsNullOrEmpty(txt_taxpercent.Text))
+            {
+                double val1 = double.Parse(txt_amount.Text);
+                double val2 = double.Parse(txt_taxpercent.Text);
+                double val3 = val1 * val2;
+                double val4 = val3 / 100;
+                txt_taxamount.Text = val4.ToString();
+            }
         }
     }
 }

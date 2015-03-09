@@ -26,4 +26,4 @@ E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.ReportSource.dll
 E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.Shared.dll
 E:\TestBilling\testbilling\bin\Debug\CrystalDecisions.Windows.Forms.dll
-E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.csprojResolveAssemblyReference.cache
+E:\TestBilling\testbilling\obj\x86\Debug\ShopProducts.Forms.frmReturnSub.resources

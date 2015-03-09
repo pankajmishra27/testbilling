@@ -48,6 +48,7 @@
             this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchInvoiceDeatailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,7 +180,8 @@
             // 
             this.invoiceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem1,
-            this.viewToolStripMenuItem2});
+            this.viewToolStripMenuItem2,
+            this.searchInvoiceDeatailToolStripMenuItem});
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
             this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.invoiceToolStripMenuItem.Text = "Invoice";
@@ -187,14 +189,14 @@
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
             // viewToolStripMenuItem2
             // 
             this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
-            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(189, 22);
             this.viewToolStripMenuItem2.Text = "View";
             this.viewToolStripMenuItem2.Click += new System.EventHandler(this.viewToolStripMenuItem2_Click);
             // 
@@ -210,6 +212,13 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // searchInvoiceDeatailToolStripMenuItem
+            // 
+            this.searchInvoiceDeatailToolStripMenuItem.Name = "searchInvoiceDeatailToolStripMenuItem";
+            this.searchInvoiceDeatailToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.searchInvoiceDeatailToolStripMenuItem.Text = "Search Invoice Deatail";
+            this.searchInvoiceDeatailToolStripMenuItem.Click += new System.EventHandler(this.searchInvoiceDeatailToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -253,6 +262,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem searchInvoiceDeatailToolStripMenuItem;
 
     }
 }
